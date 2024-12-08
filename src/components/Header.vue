@@ -73,7 +73,7 @@ export default {
     font-family: "Marko One", serif;
     font-weight: 400;
     font-style: normal;
-    line-height: 1.0.5;
+    line-height: 1.1;
     text-transform: uppercase;
     margin-right: auto;
     margin-left: 11px;
