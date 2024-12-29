@@ -1,0 +1,98 @@
+{
+    "aboutMain": {
+      "title": "Über uns",
+      "subtitle": [
+        "Wir bieten Leistungen von höchster Qualität, um Ihre Erwartungen zu übertreffen. Unsere Fachkenntnisse garantieren herausragende Ergebnisse. <span class=\"highlight\">Wahrheit</span> ist unser Fundament. Wir streben nach Spitzenleistungen und stellen uns jeder Herausforderung. Vertrauen und Transparenz stehen im Mittelpunkt unseres Handelns.",
+        "Wir stehen für Innovation und Wachstum. Mit einem leidenschaftlichen Team schaffen wir Lösungen, die nachhaltige Veränderungen bewirken. <span class=\"highlight\">Unsere Werte</span> treiben uns an, das Beste zu leisten."
+      ]
+    },
+    "team": {
+      "title": "Lernen Sie das Team kennen",
+      "tabs": [
+        "Management",
+        "Produkt",
+        "Marketing",
+        "Design",
+        "Entwicklung"
+      ],
+      "buttons": {
+        "loadMore": "Mehr laden"
+      },
+      "modal": {
+        "viewProfile": "Profil ansehen",
+        "close": "Schließen"
+      },
+      "members": {
+        "vicky-russ": {
+          "title": "CTO FÜR ANWENDUNGSENTWICKLUNG",
+          "description1": "Unsere Vision treibt uns an, die besten Produkte zu entwickeln.",
+          "description2": "Mit Präzision und Leidenschaft arbeiten wir an technologischen Durchbrüchen.",
+          "quote": "„Innovation ist der Schlüssel zum Erfolg.“"
+        },
+        "rot-mitt": {
+          "title": "CTO FÜR KOMMUNIKATIONSNETZWERKE",
+          "description1": "Kommunikation ist die Grundlage einer starken Gesellschaft.",
+          "description2": "Wir streben nach Exzellenz in jeder Verbindung, die wir schaffen.",
+          "quote": "„Kommunikation verbindet uns alle.“"
+        },
+        "laura-hanz": {
+            "title": "CEO",
+            "description1": "",
+            "description2": "",
+            "quote": ""
+          },
+          "elena-wood": {
+            "title": "DEPUTY CHIEF EXECUTIVE OFFICER",
+            "description1": "",
+            "description2": "",
+            "quote": ""
+          },
+          "aman-nais": {
+            "title": "CTO FOR APPLICATION DEVELOPMENT",
+            "description1": "",
+            "description2": "",
+            "quote": ""
+          },
+          "francisca-lemon": {
+            "title": "MANAGING DIRECTOR",
+            "description1": "",
+            "description2": "",
+            "quote": ""
+          },
+          "reine-tais": {
+            "title": "MANAGING DIRECTOR",
+            "description1": "",
+            "description2": "",
+            "quote": ""
+          },
+          "olgur-monz": {
+            "title": "PRODUCT DESIGNER",
+            "description1": "",
+            "description2": "",
+            "quote": ""
+          }
+      }
+    },
+    "quoteSection": {
+      "text": "„Transparenz, Integrität und Engagement sind die Bausteine unseres Erfolgs. Jede Entscheidung basiert auf fundierten Werten und klaren Zielen.“",
+      "caption": "Werte, die uns leiten"
+    },
+    "valueSection": {
+      "title": "Unsere Werte basieren auf den folgenden vier Grundlagen:",
+      "items": {
+        "heading1": "Transparenz",
+        "description1": "Wir legen großen Wert auf klare und ehrliche Kommunikation in allem, was wir tun.",
+        "heading2": "Kommunikation",
+        "description2": "Der Austausch von Ideen und Informationen treibt unsere Innovationen an.",
+        "heading3": "Verantwortung",
+        "description3": "Wir übernehmen Verantwortung für unsere Entscheidungen und deren Auswirkungen.",
+        "heading4": "Initiative",
+        "description4": "Wir handeln proaktiv, um stets einen Schritt voraus zu sein."
+      }
+    },
+    "jobsInfo": {
+      "title": "Sehen Sie unsere offenen Stellen",
+      "subtitle": "Unsere Personalpolitik ist es, die internationalste Belegschaft zu schaffen und sie als Team zu vereinen.",
+      "button": "Jobs anzeigen"
+    }
+  }

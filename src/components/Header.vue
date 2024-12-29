@@ -3,30 +3,32 @@
         <div class="container">
             <div class="header-inner">
                 <router-link to="/" class="logo">
-                    <img src="@/assets/images/logo.svg" alt="">
+                    <img src="@/assets/images/logo.svg" alt="Logo" />
                 </router-link>
-                <h3 class="brand-name">YOUR BRAND</h3>
+
+                <h3 class="brand-name">{{ $t('common.header.brandName') }}</h3>
                 <nav class="menu">
                     <ul class="menu-list">
-                        <li v-for="(item, index) in menuItems" :key="index" :class="{ active: isActive(item.path) }"
-                            class="menu-link">
-                            <router-link :to="item.path">{{ item.label }}</router-link>
+                        <li v-for="(item, index) in menuItems" :key="index" :class="{ active: isActive(item.path) }" class="menu-link">
+                            <router-link :to="item.path">
+                                {{ $t(`common.header.menuItems.${item.label}`) }}
+                            </router-link>
                         </li>
                     </ul>
                 </nav>
-                <div class="menu-lang">
+
+                <div class="menu-lang" @mouseenter="showDropdown" @mouseleave="hideDropdown">
                     <div class="lang-select">
-                        <a href="#" class="flag-icon">En
-                            <img src="@/assets/images/flag-en.svg" alt="English language">
+                        <a href="#" class="flag-icon">
+                            {{ selectedLang.code }}
+                            <img :src="selectedLang.flag" :alt="selectedLang.code" />
                         </a>
-                        <img src="@/assets/images/lang-arrow.svg" alt="" class="arrow-icon">
+                        <img src="@/assets/images/lang-arrow.svg" alt="" class="arrow-icon" />
                     </div>
-                    <div class="lang-dropdown">
-                        <a href="#" class="lang-option">Es
-                            <img src="@/assets/images/flag-es.svg" alt="">
-                        </a>
-                        <a href="#" class="lang-option">De
-                            <img src="@/assets/images/flag-de.svg" alt="">
+                    <div class="lang-dropdown" v-if="isDropdownOpen">
+                        <a href="#" v-for="lang in otherLanguages" :key="lang.code" class="lang-option" @click.prevent="selectLanguage(lang)">
+                            {{ lang.code }}
+                            <img :src="lang.flag" :alt="lang.code" />
                         </a>
                     </div>
                 </div>
@@ -34,26 +36,72 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
     name: 'Header',
     data() {
+        const currentLangCode = this.$i18n.locale;
+        const currentLang = this.languages?.find(lang => lang.code.toLowerCase() === currentLangCode) || null;
+
         return {
             menuItems: [
-                { label: "About us", path: "/about" },
-                { label: "Products", path: "/products" },
-                { label: "How we work", path: "/work" },
-                { label: "Blog", path: "/blog" },
-                { label: "Contact", path: "/contact" },
+                { label: 'about', path: '/about' },
+                { label: 'products', path: '/products' },
+                { label: 'work', path: '/work' },
+                { label: 'blog', path: '/blog' },
+                { label: 'contact', path: '/contact' },
             ],
+            languages: [
+                { code: 'En', flag: require('@/assets/images/flag-en.svg') },
+                { code: 'Es', flag: require('@/assets/images/flag-es.svg') },
+                { code: 'De', flag: require('@/assets/images/flag-de.svg') },
+            ],
+            selectedLang: currentLang || { code: 'En', flag: require('@/assets/images/flag-en.svg') },
+            isDropdownOpen: false,
         };
+    },
+    computed: {
+        otherLanguages() {
+            return this.languages.filter(lang => lang.code !== this.selectedLang.code);
+        },
+    },
+    watch: {
+        '$i18n.locale': {
+            immediate: true,
+            handler(newLocale) {
+                const currentLang = this.languages.find(lang => lang.code.toLowerCase() === newLocale);
+                if (currentLang) {
+                    this.selectedLang = currentLang;
+                }
+            },
+        },
     },
     methods: {
         isActive(path) {
             return this.$route.path === path;
         },
+        showDropdown() {
+            this.isDropdownOpen = true;
+        },
+        hideDropdown() {
+            this.isDropdownOpen = false;
+        },
+        selectLanguage(lang) {
+            this.selectedLang = lang;
+            this.isDropdownOpen = false;
+            this.$i18n.locale = lang.code.toLowerCase();
+            localStorage.setItem('locale', lang.code.toLowerCase());
+        },
     },
-}
+    mounted() {
+        const currentLangCode = this.$i18n.locale;
+        const currentLang = this.languages.find(lang => lang.code.toLowerCase() === currentLangCode);
+        if (currentLang) {
+            this.selectedLang = currentLang;
+        }
+    },
+};
 </script>
 <style>
 .header-inner {
@@ -168,16 +216,16 @@ export default {
     display: block;
 }
 
-@media (max-width: 1235px) {   
-    .menu-list{
+@media (max-width: 1235px) {
+    .menu-list {
         margin-left: auto;
         margin-right: 0;
     }
 
-    .header-inner{
+    .header-inner {
         margin-bottom: 50px;
     }
-   
+
     .menu-lang {
         margin-left: auto;
     }
@@ -201,7 +249,7 @@ export default {
         width: 15px;
     }
 
-    .arrow-icon{
+    .arrow-icon {
         width: 10px;
     }
 

@@ -39,48 +39,13 @@ export default {
         MessageInfo,
         Footer
     },
-    data() {
-        return {
-            footerLinks: [
-                {
-                    title: "Product",
-                    class: "footer-column-product",
-                    links: [
-                        { text: "Download", href: "#", isRouter: true },
-                        { text: "Pricing", href: "#", isRouter: true },
-                        { text: "Locations", href: "#", isRouter: true },
-                        { text: "Server", href: "#", isRouter: true },
-                        { text: "Countries", href: "#", isRouter: true },
-                        { text: "Blog", href: "#", isRouter: true },
-                    ],
-                },
-                {
-                    title: "Company",
-                    class: "footer-column-company",
-                    links: [
-                        { text: "Brand", href: "#", isRouter: true },
-                        { text: "FAQ", href: "#", isRouter: true },
-                        { text: "Tutorials", href: "#", isRouter: true },
-                        { text: "About Us", href: "/about", isRouter: true },
-                        { text: "We're hiring!", href: "#", isRouter: true },
-                    ],
-                },
-                {
-                    title: "Privacy",
-                    class: "footer-column-privacy",
-                    links: [
-                        { text: "Privacy", href: "#", isRouter: true },
-                        { text: "Terms of Use", href: "#", isRouter: true },
-                        { text: "Site Map", href: "#", isRouter: true },
-                    ],
-                },
-            ],
-        };
-    },
-
-};
+    computed: {
+        footerLinks() {
+            const locale = this.$i18n.locale
+            return this.$i18n.messages[locale]?.common?.footer?.homeFooter?.columns || []
+        }
+    }
+}
 </script>
 
-<style>
-
-</style>
+<style></style>

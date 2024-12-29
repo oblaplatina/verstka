@@ -1,0 +1,98 @@
+{
+  "aboutMain": {
+    "title": "About us",
+    "subtitle": [
+      "Sunt voluptatibus reprehenderit quo non unde quis odio. Quis nobis neque laudantium alias fugiat repellat. Qui ullam quas iusto qui eum et temporibus. <span class=\"highlight\">Veritatis</span> repudiandae perferendis esse repellendus doloribus voluptatem iste autem. Tempore aspernatur est qui sed sed quia.",
+      "Consequatur sapiente tenetur. Libero totam et vel cupiditate quo quidem. Nobis dolore amet. Sit voluptas ut. Eos quis natus sapiente esse odit sint culpa aut. Mollitia <span class=\"highlight\">qui quam iste</span> assumenda ullam."
+    ]
+  },
+  "team": {
+    "title": "Meet the team",
+    "tabs": [
+      "Management",
+      "Product",
+      "Marketing",
+      "Design",
+      "Development"
+    ],
+    "buttons": {
+      "loadMore": "Load more"
+    },
+    "modal": {
+      "viewProfile": "View profile",
+      "close": "Close"
+    },
+    "members": {
+      "vicky-russ": {
+        "title": "CTO FOR APPLICATION DEVELOPMENT",
+        "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "description2": "Donec a diam lectus. Sed sit amet ipsum mauris.",
+        "quote": "“Innovation is key to success.”"
+      },
+      "rot-mitt": {
+        "title": "CTO FOR COMMUNICATIONS NETWORKS",
+        "description1": "Consequuntur est accusantium et nemo. Similique quo atque ut eligendi aspernatur.",
+        "description2": "Quod suscipit et sapiente et explicabo itaque molestiae laudantium architecto.",
+        "quote": "“Similique quo atque ut eligendi aspernatur modi.”"
+      }
+    },
+    "laura-hanz": {
+      "title": "CEO",
+      "description1": "",
+      "description2": "",
+      "quote": ""
+    },
+    "elena-wood": {
+      "title": "DEPUTY CHIEF EXECUTIVE OFFICER",
+      "description1": "",
+      "description2": "",
+      "quote": ""
+    },
+    "aman-nais": {
+      "title": "CTO FOR APPLICATION DEVELOPMENT",
+      "description1": "",
+      "description2": "",
+      "quote": ""
+    },
+    "francisca-lemon": {
+      "title": "MANAGING DIRECTOR",
+      "description1": "",
+      "description2": "",
+      "quote": ""
+    },
+    "reine-tais": {
+      "title": "MANAGING DIRECTOR",
+      "description1": "",
+      "description2": "",
+      "quote": ""
+    },
+    "olgur-monz": {
+      "title": "PRODUCT DESIGNER",
+      "description1": "",
+      "description2": "",
+      "quote": ""
+    }
+  },
+  "quoteSection": {
+    "text": "“Lusto iure id ad. Doloremque et molestiae perspiciatis quis voluptas ut sed. Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium error impedit impedit. Minima quisquam fuga sed maxime vitae non fuga. Quo asperiores ut autem unde mollitia.”",
+    "caption": "Lorem Ipsum"
+  },
+  "valueSection": {
+    "title": "Our values stem from the following four roots:",
+    "items": {
+      "heading1": "Transparency",
+      "description1": "Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium error impedit impedit. Minima quisquam fuga sed maxime vitae non fuga.",
+      "heading2": "Communication",
+      "description2": "Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium error impedit impedit. Minima quisquam fuga sed maxime vitae non fuga.",
+      "heading3": "Responsibility",
+      "description3": "Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium error impedit impedit. Minima quisquam fuga sed maxime vitae non fuga.",
+      "heading4": "Initiative",
+      "description4": "Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium error impedit impedit. Minima quisquam fuga sed maxime vitae non fuga."
+    }
+  },
+  "jobsInfo": {
+        "title": "See our open positions",
+        "subtitle": "Our personnel policy is to create the most international workforce possible and weld it together as a team",
+        "button": "See jobs"
+      }
+}

@@ -1,6 +1,6 @@
 <template>
     <div v-if="visible" class="notification-bar">
-        <span class="notification-text">COVID-19: An Update for Our Customers</span>
+        <span class="notification-text">{{ $t('home.notificationBar.text') }}</span>
         <img class="close-icon" src="@/assets/images/close-icon.svg" alt="Close" @click="closeNotificationBar" />
 
     </div>

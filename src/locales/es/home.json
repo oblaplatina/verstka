@@ -1,0 +1,114 @@
+{
+    "notificationBar": {
+        "text": "COVID-19: Una actualización para nuestros clientes"
+    },
+    "main": {
+        "title": "TECNOLOGÍA DE COMUNICACIÓN",
+        "subtitle": [
+            "Nada repulsivo que puedan ignorar jamás.",
+            "Rechaza las deudas o existe sin deudas y sin debilidad."
+        ],
+        "button": "Contáctenos"
+    },
+    "stat": {
+        "customers": {
+            "value": "+900K",
+            "label": "Clientes"
+        },
+        "countries": {
+            "value": "+30",
+            "label": "Países"
+        },
+        "servers": {
+            "value": "+8K",
+            "label": "Servidores"
+        }
+    },
+    "info": {
+        "title": "Ofrecemos muchas funciones que puedes utilizar",
+        "description": "Puedes explorar las funciones que ofrecemos con diversión y cada una tiene su propia funcionalidad.",
+        "list": [
+            "Protección en línea potente.",
+            "Internet sin fronteras.",
+            "VPN súper cargada.",
+            "Sin límites de tiempo específicos."
+        ],
+        "button": "Más información aquí"
+    },
+    "bestProducts": {
+        "title": "Nuestros mejores productos",
+        "subtitle": "Ea voluptatem nobis nihil perspiciatis animi repellendus qui qui esse. Recusandae molestias praesentium hic odit quisquam quae ullam. At fugiat voluptatum voluptas saepe cupiditate iusto quisquam. Nobis incidunt voluptatem.",
+        "products": [
+            {
+                "title": "Odit sed accusantium",
+                "text": "Todas las molestias del ánimo son grandes y provienen de nada. Arquitecto o todo en su lugar. Blanditiis sabio y.",
+                "button": "Más información"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Todas las molestias del ánimo son grandes y provienen de nada. Arquitecto o todo en su lugar. Blanditiis sabio y.",
+                "button": "Más información"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Todas las molestias del ánimo son grandes y provienen de nada. Arquitecto o todo en su lugar. Blanditiis sabio y.",
+                "button": "Más información"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Todas las molestias del ánimo son grandes y provienen de nada. Arquitecto o todo en su lugar. Blanditiis sabio y.",
+                "button": "Más información"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Todas las molestias del ánimo son grandes y provienen de nada. Arquitecto o todo en su lugar. Blanditiis sabio y.",
+                "button": "Más información"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Todas las molestias del ánimo son grandes y provienen de nada. Arquitecto o todo en su lugar. Blanditiis sabio y.",
+                "button": "Más información"
+            }
+        ]
+    },
+    "together": {
+        "title": "Mejor juntos",
+        "subtitle": "Quas et dolorem quod. Autem et labore dolor ab incidunt nisi. Qui voluptas quia sequi. Nihil est ullam omnis voluptas repellat voluptatibus error iure.",
+        "worldMapAlt": "mapa mundial",
+        "tooltips": {
+            "brazil": "Brasil",
+            "china": "China"
+        }
+    },
+    "customers": {
+        "title": "Clientes felices",
+        "subtitle": "Donde desaparece lo negativo, lo que para algunos es agradable. Quejas constantes sobre dolores que justifican el dolor.",
+        "cards": [
+            {
+                "name": "Julia Walls",
+                "location": "Varsovia, Polonia",
+                "text": "Trabajar para eliminar molestias. Sigue lo que es agradable en el momento. El odio bloquea problemas y lleva al cumplimiento de obligaciones."
+            },
+            {
+                "name": "Nie Chan",
+                "location": "Shanxi, China",
+                "text": "Trabajar para eliminar molestias. Sigue lo que es agradable en el momento. El odio bloquea problemas y lleva al cumplimiento de obligaciones."
+            },
+            {
+                "name": "Alex Young",
+                "location": "Seúl, Corea del Sur",
+                "text": "Trabajar para eliminar molestias. Sigue lo que es agradable en el momento. El odio bloquea problemas y lleva al cumplimiento de obligaciones."
+            },
+            {
+                "name": "Niha Torns",
+                "location": "Rusia",
+                "text": "Trabajar para eliminar molestias. Sigue lo que es agradable en el momento. El odio bloquea problemas y lleva al cumplimiento de obligaciones."
+            }
+        ]
+    },
+    "messageInfo": {
+        "title": "Escríbenos ahora para más información increíble",
+        "subtitle": "Te ayudaremos con todo lo que necesites.",
+        "button": "Contáctanos"
+    }
+}

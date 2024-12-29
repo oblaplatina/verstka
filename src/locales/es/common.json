@@ -1,0 +1,206 @@
+{
+    "header": {
+        "brandName": "SU MARCA",
+        "menuItems": {
+            "about": "Sobre nosotros",
+            "products": "Productos",
+            "work": "Cómo trabajamos",
+            "blog": "Blog",
+            "contact": "Contacto"
+        }
+    },
+    "footer": {
+        "brandName": "TU MARCA",
+        "description": "Corporales como algo que hace daño. Pero los dolores persisten.",
+        "socialLinks": [
+            "Facebook",
+            "Twitter",
+            "Instagram"
+        ],
+        "copyright": "©2020 Todos los derechos reservados",
+        "homeFooter": {
+            "columns": [
+                {
+                    "title": "Producto",
+                    "class": "footer-column-product",
+                    "links": [
+                        {
+                            "text": "Descargar",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Precios",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Ubicaciones",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Servidor",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Países",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Blog",
+                            "href": "#",
+                            "isRouter": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Compañía",
+                    "class": "footer-column-company",
+                    "links": [
+                        {
+                            "text": "Marca",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "FAQ",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Tutoriales",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Sobre nosotros",
+                            "href": "/about",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Estamos contratando!",
+                            "href": "#",
+                            "isRouter": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Privacidad",
+                    "class": "footer-column-privacy",
+                    "links": [
+                        {
+                            "text": "Privacidad",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Términos de uso",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Mapa del sitio",
+                            "href": "#",
+                            "isRouter": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "about": {
+            "columns": [
+                {
+                    "title": "Producto",
+                    "class": "footer-column-product",
+                    "links": [
+                        {
+                            "text": "Descargar",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Precios",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Ubicaciones",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Servidor",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Países",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Blog",
+                            "href": "#",
+                            "isRouter": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Participar",
+                    "class": "footer-column-company",
+                    "links": [
+                        {
+                            "text": "ECT",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "FAQ",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Tutoriales",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Sobre nosotros",
+                            "href": "/about",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Estamos contratando!",
+                            "href": "#",
+                            "isRouter": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Privacidad",
+                    "class": "footer-column-privacy",
+                    "links": [
+                        {
+                            "text": "Privacidad",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Términos de uso",
+                            "href": "#",
+                            "isRouter": true
+                        },
+                        {
+                            "text": "Mapa del sitio",
+                            "href": "#",
+                            "isRouter": true
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

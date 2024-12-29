@@ -2,62 +2,28 @@
     <section class="best-products">
         <div class="products-shadow"></div>
         <div class="best-products-inner">
-            <h2 class="section-best-products-title">Our best products</h2>
-            <p class="section-best-product-subtitle">Ea voluptatem nobis nihil perspiciatis animi repellendus qui
-                qui
-                esse. Recusandae molestias praesentium hic odit quisquam quae ullam. At fugiat voluptatum voluptas
-                saepe
-                cupiditate iusto quisquam. Nobis incidunt voluptatem.</p>
+            <h2 class="section-best-products-title">{{ $t('home.bestProducts.title') }}</h2>
+            <p class="section-best-product-subtitle">{{ $t('home.bestProducts.subtitle') }}</p>
             <div class="product-container">
-                <div class="product-card">
+                <div class="product-card" v-for="(product, index) in productList" :key="index">
                     <img src="@/assets/images/product-card-icon.svg" alt="" class="product-card-icon">
-                    <h3 class="product-card-title">Odit sed accusantium</h3>
-                    <p class="product-card-text">Omnis molestias animi magnam et unde nihil id. Architecto aut omnis
-                        placeat. Blanditiis sapiente et et.</p>
-                    <a href="#" class="product-card-button">More info</a>
-                </div>
-                <div class="product-card">
-                    <img src="@/assets/images/product-card-icon.svg" alt="" class="product-card-icon">
-                    <h3 class="product-card-title">Odit sed accusantium</h3>
-                    <p class="product-card-text">Omnis molestias animi magnam et unde nihil id. Architecto aut omnis
-                        placeat. Blanditiis sapiente et et.</p>
-                    <a href="#" class="product-card-button">More info</a>
-                </div>
-                <div class="product-card">
-                    <img src="@/assets/images/product-card-icon.svg" alt="" class="product-card-icon">
-                    <h3 class="product-card-title">Odit sed accusantium</h3>
-                    <p class="product-card-text">Omnis molestias animi magnam et unde nihil id. Architecto aut omnis
-                        placeat. Blanditiis sapiente et et.</p>
-                    <a href="#" class="product-card-button">More info</a>
-                </div>
-                <div class="product-card">
-                    <img src="@/assets/images/product-card-icon.svg" alt="" class="product-card-icon">
-                    <h3 class="product-card-title">Odit sed accusantium</h3>
-                    <p class="product-card-text">Omnis molestias animi magnam et unde nihil id. Architecto aut omnis
-                        placeat. Blanditiis sapiente et et.</p>
-                    <a href="#" class="product-card-button">More info</a>
-                </div>
-                <div class="product-card">
-                    <img src="@/assets/images/product-card-icon.svg" alt="" class="product-card-icon">
-                    <h3 class="product-card-title">Odit sed accusantium</h3>
-                    <p class="product-card-text">Omnis molestias animi magnam et unde nihil id. Architecto aut omnis
-                        placeat. Blanditiis sapiente et et.</p>
-                    <a href="#" class="product-card-button">More info</a>
-                </div>
-                <div class="product-card">
-                    <img src="@/assets/images/product-card-icon.svg" alt="" class="product-card-icon">
-                    <h3 class="product-card-title">Odit sed accusantium</h3>
-                    <p class="product-card-text">Omnis molestias animi magnam et unde nihil id. Architecto aut omnis
-                        placeat. Blanditiis sapiente et et.</p>
-                    <a href="#" class="product-card-button">More info</a>
+                    <h3 class="product-card-title">{{ product.title }}</h3>
+                    <p class="product-card-text">{{ product.text }}</p>
+                    <a href="#" class="product-card-button">{{ product.button }}</a>
                 </div>
             </div>
         </div>
     </section>
 </template>
+
 <script>
 export default {
-
+    computed: {
+        productList() {
+            const locale = this.$i18n.locale
+            return this.$i18n.messages[locale].home.bestProducts?.products || []
+        }
+    }
 }
 </script>
 <style>
@@ -193,10 +159,10 @@ export default {
 @media (max-width: 790px) {
     .product-card {
         flex: 0 1 calc(50% - 15px);
-        max-width: 100%; 
+        max-width: 100%;
     }
-    
-    .product-container{
+
+    .product-container {
         gap: 15px;
     }
 

@@ -2,10 +2,9 @@
     <section class="customers">
         <div class="customers-container">
             <div class="customers-inner">
-                <h2 class="customers-title">Happy Customers</h2>
+                <h2 class="customers-title">{{ $t('home.customers.title') }}</h2>
                 <p class="customers-subtitle">
-                    Unde fugit minus qui quisquam commodi sint repudiandae. Blanditiis consequuntur occaecati dolor qui
-                    reprehenderit dolore.
+                    {{ $t('home.customers.subtitle') }}
                 </p>
             </div>
         </div>
@@ -14,8 +13,8 @@
         <div class="card-slider-wrapper">
             <div ref="slider" class="card-slider" @mousedown="startDraggingCard" @mouseleave="stopDraggingCard"
                 @mouseup="stopDraggingCard" @mousemove="dragCard">
-                <div v-for="(card, index) in cards" :key="index" class="card">
-                    <img :src="card.image" alt="" class="avatar" />
+                <div v-for="(card, index) in localizedCards" :key="index" class="card">
+                    <img :src="cardImages[index]" alt="" class="avatar" />
                     <div class="card-title-ava">
                         <h3 class="card-title">{{ card.name }}</h3>
                         <p class="card-location">{{ card.location }}</p>
@@ -38,33 +37,20 @@ export default {
             isDraggingThumb: false,
             startX: 0,
             scrollLeft: 0,
-            cards: [
-                {
-                    image: require("@/assets/images/julia-walls-ava.jpg"),
-                    name: "Julia Walls",
-                    location: "Warsaw, Poland",
-                    text: "Labore recusandae illo sit quisquam. Sequi velit deserunt tempore delectus et. Odio impedit incidunt ratione debitis pariatur consequatur.",
-                },
-                {
-                    image: require("@/assets/images/nie-chan-ava.jpg"),
-                    name: "Nie Chan",
-                    location: "Shanxi, China",
-                    text: "Labore recusandae illo sit quisquam. Sequi velit deserunt tempore delectus et. Odio impedit incidunt ratione debitis pariatur consequatur.",
-                },
-                {
-                    image: require("@/assets/images/alex-young-ava.jpg"),
-                    name: "Alex Young",
-                    location: "Seoul, South Korea",
-                    text: "Labore recusandae illo sit quisquam. Sequi velit deserunt tempore delectus et. Odio impedit incidunt ratione debitis pariatur consequatur.",
-                },
-                {
-                    image: require("@/assets/images/nina-torns-ava.jpg"),
-                    name: "Niha Torns",
-                    location: "Russia",
-                    text: "Labore recusandae illo sit quisquam. Sequi velit deserunt tempore delectus et. Odio impedit incidunt ratione debitis pariatur consequatur.",
-                },
-            ],
+            cardImages: [
+                require("@/assets/images/julia-walls-ava.jpg"),
+                require("@/assets/images/nie-chan-ava.jpg"),
+                require("@/assets/images/alex-young-ava.jpg"),
+                require("@/assets/images/nina-torns-ava.jpg")
+            ]
         };
+    },
+    computed: {
+        localizedCards() {
+            const locale = this.$i18n.locale
+            const messages = this.$i18n.messages[locale]
+            return messages?.home.customers?.cards || []
+        }
     },
     methods: {
         updateThumbPosition() {
@@ -87,10 +73,25 @@ export default {
         },
         dragCard(e) {
             if (!this.isDraggingCard || this.isDraggingThumb) return;
-            const x = e.pageX - this.$refs.slider.offsetLeft;
-            const walk = (x - this.startX) * 1.5;
+            const x = e.pageX - this.startX;
+            const walk = x * 1.5;
             this.$refs.slider.scrollLeft = this.scrollLeft - walk;
             this.updateThumbPosition();
+        },
+        touchStart(e) {
+            this.isDraggingCard = true;
+            this.startX = e.touches[0].pageX - this.$refs.slider.offsetLeft;
+            this.scrollLeft = this.$refs.slider.scrollLeft;
+        },
+        touchMove(e) {
+            if (!this.isDraggingCard) return;
+            const x = e.touches[0].pageX - this.startX;
+            const walk = x * 1.5;
+            this.$refs.slider.scrollLeft = this.scrollLeft - walk;
+            this.updateThumbPosition();
+        },
+        touchEnd() {
+            this.isDraggingCard = false;
         },
         startDraggingThumb(e) {
             this.isDraggingThumb = true;
@@ -139,6 +140,16 @@ export default {
             const scrollPercentage = clickPosition / thumbMaxPosition;
             slider.scrollLeft = scrollPercentage * maxScrollLeft;
         },
+    },
+    mounted() {
+        this.$refs.slider.addEventListener("touchstart", this.touchStart);
+        this.$refs.slider.addEventListener("touchmove", this.touchMove);
+        this.$refs.slider.addEventListener("touchend", this.touchEnd);
+    },
+    beforeUnmount() {
+        this.$refs.slider.removeEventListener("touchstart", this.touchStart);
+        this.$refs.slider.removeEventListener("touchmove", this.touchMove);
+        this.$refs.slider.removeEventListener("touchend", this.touchEnd);
     },
 };
 </script>

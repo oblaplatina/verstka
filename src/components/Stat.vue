@@ -4,15 +4,15 @@
             <div class="stat-content">
                 <div class="stat-item">
                     <img src="@/assets/images/user.svg" alt="icon">
-                    <p>+900K<br><span>Customers</span></p>
+                    <p>{{ $t('home.stat.customers.value') }}<br><span>{{ $t('home.stat.customers.label') }}</span></p>
                 </div>
                 <div class="stat-item">
                     <img src="@/assets/images/location.svg" alt="icon">
-                    <p>+30<br><span>Countries</span></p>
+                    <p>{{ $t('home.stat.countries.value') }}<br><span>{{ $t('home.stat.countries.label') }}</span></p>
                 </div>
                 <div class="stat-item">
                     <img src="@/assets/images/server.svg" alt="icon">
-                    <p>+8K<br><span>Servers</span></p>
+                    <p>{{ $t('home.stat.servers.value') }}<br><span>{{ $t('home.stat.servers.label') }}</span></p>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-    
+    name: 'Stat',
 }
 </script>
 <style>

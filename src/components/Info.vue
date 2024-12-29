@@ -4,37 +4,36 @@
             <img src="@/assets/images/campaign.png" alt="" class="campaign-img">
             <div class="info-inner">
                 <h2 class="section-info-title">
-                    We Provide Many Features You Can Use
+                    {{ $t('home.info.title') }}
                 </h2>
                 <p class="info-text">
-                    You can explore the features that we provide with fun and have their own functions each feature.
+                    {{ $t('home.info.description') }}
                 </p>
                 <ul class="info-list">
-                    <li class="info-list-item">
-                        Powerfull online protection.
-                    </li>
-                    <li class="info-list-item">
-                        Internet without borders.
-                    </li>
-                    <li class="info-list-item">
-                        Supercharged VPN
-                    </li>
-                    <li class="info-list-item">
-                        No specific time limits.
+                    <li class="info-list-item" v-for="(item, index) in infoItems" :key="index">
+                        {{ item }}
                     </li>
                 </ul>
-                <a href="#" class="info-inner-more-info">More info here</a>
+                <a href="#" class="info-inner-more-info">
+                    {{ $t('home.info.button') }}
+                </a>
             </div>
         </div>
     </section>
 </template>
+
 <script>
 export default {
-    
+    computed: {
+        infoItems() {
+            const items = this.$i18n.messages[this.$i18n.locale].home.info.list
+            return items || []
+        }
+    }
 }
 </script>
 <style>
-    .info {
+.info {
     margin-bottom: 151px;
     margin-left: 71px;
 }
@@ -106,7 +105,7 @@ export default {
     .info {
         margin-left: 0;
     }
-    
+
     .section-info-title {
         font-size: 25px;
     }
@@ -156,7 +155,7 @@ export default {
         font-size: 14px;
     }
 
-    .info-inner{
+    .info-inner {
         margin-left: 0;
         margin-bottom: 15px;
     }

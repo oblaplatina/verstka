@@ -3,14 +3,13 @@
         <div class="jobs-info-container">
             <img src="@/assets/images/online_research.svg" alt="" class="jobs-info-img">
             <div class="jobs-info-inner">
-                <h2 class="jobs-info-title">See our open positions</h2>
+                <h2 class="jobs-info-title">{{ $t ('about.jobsInfo.title') }}</h2>
                 <div class="jobs-info-subtitle">
-                    <p>Our personnel policy is to create the most international workforce possible and weld it together
-                        as a team.</p>
+                    <p>{{ $t ('about.jobsInfo.subtitle') }}</p>
                 </div>
             </div>
             <div class="jobs-button-shadow">
-                <a href="#" class="jobs-btn">See jobs</a>
+                <a href="#" class="jobs-btn">{{ $t ('about.jobsInfo.button') }}</a>
             </div>
         </div>
     </section>

@@ -1,25 +1,33 @@
 <template>
     <div class="main-content">
-        <section class="main-top">
-            <div class="text-container">
-                <h1 class="main-title">COMMUNICATION TECH</h1>
-                <div class="main-subtitle">
-                    <p>Nihil repellendus nesciunt ut autem numquam.</p>
-                    <p>Repellat debitis aut esse cum debitis a mollitia non.</p>
-                </div>
-                <div class="button-shadow">
-                    <a href="#" class="contact-btn">Contact us</a>
-                </div>
-            </div>
-            <img src="@/assets/images/network.svg" alt="Network Image" class="network-img">
-        </section>
+      <section class="main-top">
+        <div class="text-container">
+          <h1 class="main-title" :class="{ 'main-title-es': $i18n.locale === 'es' }">{{ $t('home.main.title') }}</h1>
+          <div class="main-subtitle">
+            <p v-for="(line, index) in subtitleLines" :key="index">{{ $t('home.main.subtitle.' + index) }}</p>
+          </div>
+          <div class="button-shadow">
+            <a href="#" class="contact-btn">{{ $t('home.main.button') }}</a>
+          </div>
+        </div>
+        <img src="@/assets/images/network.svg" alt="Network Image" class="network-img">
+      </section>
     </div>
-</template>
-<script>
-export default {
+  </template>
+  
+  <script>
+  export default {
+    name: 'Main',
+    computed: {
+      subtitleLines() {
+        const line = this.$i18n.messages[this.$i18n.locale].home.main.subtitle
+            return line || []
+      }
+    }
+  }
+  </script>
 
-}
-</script>
+
 <style>
 .main-content {
     margin-bottom: 157.55px;
@@ -37,6 +45,10 @@ export default {
     text-transform: uppercase;
     line-height: 1.4;
     color: #8CC5F9;
+}
+
+.main-title-es { 
+    font-size: 44px;
 }
 
 .main-subtitle {
@@ -138,8 +150,8 @@ export default {
         flex-direction: column;
         margin-left: 0;
     }
-    
-    .main-content{
+
+    .main-content {
         margin-bottom: 85px;
     }
 

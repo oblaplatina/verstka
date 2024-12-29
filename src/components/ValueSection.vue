@@ -1,6 +1,6 @@
 <template>
     <section class="values-section">
-        <h2 class="values-title">Our values stem from the following four roots:</h2>
+        <h2 class="values-title">{{$t ('about.valueSection.title')}}</h2>
 
         <div class="value-item">
             <div class="value-inner">
@@ -8,10 +8,8 @@
                     <img src="@/assets/images/one-vector.svg" alt="Number 1" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">Transparency</h3>
-                    <p class="value-description">Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium
-                        error
-                        impedit impedit. Minima quisquam fuga sed maxime vitae non fuga.</p>
+                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading1')}}</h3>
+                    <p class="value-description">{{$t ('about.valueSection.items.description1')}}</p>
                 </div>
             </div>
         </div>
@@ -22,9 +20,8 @@
                     <img src="@/assets/images/two-vector.svg" alt="Number 2" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">Communication</h3>
-                    <p class="value-description">Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium
-                        error impedit impedit. Minima quisquam fuga sed maxime vitae non fuga.</p>
+                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading2')}}</h3>
+                    <p class="value-description">{{$t ('about.valueSection.items.description2')}}</p>
                 </div>
             </div>
         </div>
@@ -35,10 +32,8 @@
                     <img src="@/assets/images/three-vector.svg" alt="Number 3" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">Responsibility</h3>
-                    <p class="value-description">Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium
-                        error
-                        impedit impedit. Minima quisquam fuga sed maxime vitae non fuga.</p>
+                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading3')}}</h3>
+                    <p class="value-description">{{$t ('about.valueSection.items.description3')}}</p>
                 </div>
             </div>
         </div>
@@ -49,10 +44,8 @@
                     <img src="@/assets/images/four-vector.svg" alt="Number 4" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">Initiative</h3>
-                    <p class="value-description">Omnis praesentium doloremque ipsa eveniet. Itaque aut ea accusantium
-                        error
-                        impedit impedit. Minima quisquam fuga sed maxime vitae non fuga.</p>
+                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading4')}}</h3>
+                    <p class="value-description">{{$t ('about.valueSection.items.description4')}}</p>
                 </div>
             </div>
         </div>

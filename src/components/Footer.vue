@@ -1,89 +1,106 @@
 <template>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <div class="footer-brand-logo">
-                    <router-link to="/" class="footer-logo">
-                    <img src="@/assets/images/logo.svg" alt="">
-                </router-link>
-                    <h3 class="footer-brand-name">YOUR BRAND</h3>
-                </div>
-                <p class="footer-description">
-                    Corporis ut aliquid qui molestiae. Sed laborum sunt recusandae animi dolore voluptates.
-                </p>
-                <div class="footer-social">
-                    <a href="#" class="social-link"><img src="@/assets/images/Facebook.svg" alt="Facebook" /></a>
-                    <a href="#" class="social-link"><img src="@/assets/images/twitter.svg" alt="Twitter" /></a>
-                    <a href="#" class="social-link"><img src="@/assets/images/instagram.svg" alt="Instagram" /></a>
-                </div>
-                <p class="footer-copyright">
-                    &copy;2020 All rights reserved
-                </p>
-            </div>
-            <div class="footer-links">
-                <div v-for="(column, index) in links" :key="index" :class="['footer-column', column.class]">
-                    <h3 class="footer-title">
-                        {{ column.title }}
-                        <span class="dropdown-icon" @click="toggleDropdown(index)" :class="{ open: isOpen[index] }">
-                            <img :src="require('@/assets/images/lang-arrow.svg')" alt="Dropdown arrow"
-                                class="dropdown-arrow" />
-                        </span>
-                    </h3>
-                    <ul class="footer-list" :class="{ 'is-hidden': isMobile && !isOpen[index] }">
-                        <li v-for="(link, linkIndex) in column.links" :key="linkIndex">
-                            <router-link v-if="link.isRouter" :to="link.href" class="footer-link">
-                                {{ link.text }}
-                            </router-link>
-                            <a v-else :href="link.href" class="footer-link" target="_blank">
-                                {{ link.text }}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-brand-logo">
+          <router-link to="/" class="footer-logo">
+            <img src="@/assets/images/logo.svg" alt="footer logo" />
+          </router-link>
+          <h3 class="footer-brand-name">{{ $t('common.footer.brandName') }}</h3>
         </div>
-    </footer>
+
+        <p class="footer-description">{{ $t('common.footer.description') }}</p>
+
+        <div class="footer-social">
+          <a href="#" class="social-link">
+            <img src="@/assets/images/Facebook.svg" alt="Facebook" />
+          </a>
+          <a href="#" class="social-link">
+            <img src="@/assets/images/twitter.svg" alt="Twitter" />
+          </a>
+          <a href="#" class="social-link">
+            <img src="@/assets/images/instagram.svg" alt="Instagram" />
+          </a>
+        </div>
+
+        <p class="footer-copyright">
+          {{ $t('common.footer.copyright') }}
+        </p>
+      </div>
+      <div class="footer-links">
+        <div
+          v-for="(column, index) in links"
+          :key="index"
+          :class="['footer-column', column.class]"
+        >
+          <h3 class="footer-title">
+            {{ column.title }}
+            <span class="dropdown-icon" 
+                  @click="toggleDropdown(index)" 
+                  :class="{ open: isOpen[index] }"
+            >
+              <img 
+                :src="require('@/assets/images/lang-arrow.svg')" 
+                alt="Dropdown arrow"
+                class="dropdown-arrow"
+              />
+            </span>
+          </h3>
+          <ul class="footer-list" :class="{ 'is-hidden': isMobile && !isOpen[index] }">
+            <li v-for="(link, linkIndex) in column.links" :key="linkIndex">
+              <router-link v-if="link.isRouter" :to="link.href" class="footer-link">
+                {{ link.text }}
+              </router-link>
+              <a v-else :href="link.href" class="footer-link" target="_blank">
+                {{ link.text }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
 export default {
-    props: {
-        links: {
-            type: Array,
-            required: true,
-            default: () => [],
-        },
-    },
-    data() {
-  return {
-    isMobile: false,
-    isOpen: [],
-    mediaQuery: null,
-  };
-},
-mounted() {
-  this.mediaQuery = window.matchMedia('(max-width: 830px)');
-  this.isMobile = this.mediaQuery.matches;
-  this.isOpen = Array(this.links.length).fill(!this.isMobile);
-
-  this.mediaQuery.addEventListener('change', this.handleMediaChange);
-},
-beforeUnmount() {
-  if (this.mediaQuery) {
-    this.mediaQuery.removeEventListener('change', this.handleMediaChange);
-  }
-},
-methods: {
-  handleMediaChange(e) {
-    this.isMobile = e.matches;
-    this.isOpen = Array(this.links.length).fill(!this.isMobile);
-  },
-  toggleDropdown(index) {
-    if (this.isMobile) {
-      this.isOpen[index] = !this.isOpen[index];
+  name: 'Footer',
+  props: {
+    links: {
+      type: Array,
+      default: () => []
     }
   },
-}
+  data() {
+    return {
+      isMobile: false,
+      isOpen: [],
+      mediaQuery: null
+    };
+  },
+  mounted() {
+    this.mediaQuery = window.matchMedia('(max-width: 830px)');
+    this.isMobile = this.mediaQuery.matches;
+    this.isOpen = Array(this.links.length).fill(!this.isMobile);
+
+    this.mediaQuery.addEventListener('change', this.handleMediaChange);
+  },
+  beforeUnmount() {
+    if (this.mediaQuery) {
+      this.mediaQuery.removeEventListener('change', this.handleMediaChange);
+    }
+  },
+  methods: {
+    handleMediaChange(e) {
+      this.isMobile = e.matches;
+      this.isOpen = Array(this.links.length).fill(!this.isMobile);
+    },
+    toggleDropdown(index) {
+      if (this.isMobile) {
+        this.isOpen[index] = !this.isOpen[index];
+      }
+    }
+  }
 };
 </script>
 <style>
@@ -287,15 +304,15 @@ methods: {
         margin-bottom: 15px;
     }
 
-    .footer-column-company{
+    .footer-column-company {
         margin-right: 0;
     }
 
-    .footer-column-privacy{
+    .footer-column-privacy {
         margin-right: 0;
     }
 
-    .footer-column-product{
+    .footer-column-product {
         margin-right: 0;
     }
 }

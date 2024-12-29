@@ -4,12 +4,8 @@
             <div class="quote-icon">
                 <img src="@/assets/images/quote-icon.svg" alt="Quote Icon">
             </div>
-            <blockquote class="quote-text">
-                “Lusto iure id ad. Doloremque et molestiae perspiciatis quis voluptas ut sed. Omnis praesentium
-                doloremque ipsa eveniet. Itaque aut ea accusantium error impedit impedit. Minima quisquam fuga sed
-                maxime vitae non fuga. Quo asperiores ut autem unde mollitia.”
-            </blockquote>
-            <cite class="quote-author">Lorem Ipsum</cite>
+            <blockquote class="quote-text">{{ $t ('about.quoteSection.text')}}</blockquote>
+            <cite class="quote-author">{{ $t ('about.quoteSection.caption')}}</cite>
         </div>
     </section>
 </template>

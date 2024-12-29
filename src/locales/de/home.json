@@ -1,0 +1,114 @@
+{
+    "notificationBar": {
+        "text": "COVID-19: Ein Update für unsere Kunden"
+    },
+    "main": {
+        "title": "KOMMUNIKATIONSTECHNIK",
+        "subtitle": [
+            "Nichts Abstoßendes, das sie jemals ignorieren könnten.",
+            "Er stößt Verpflichtungen zurück oder existiert ohne Verpflichtungen und ohne Schwäche."
+        ],
+        "button": "Kontaktieren Sie uns"
+    },
+    "stat": {
+        "customers": {
+            "value": "+900K",
+            "label": "Kunden"
+        },
+        "countries": {
+            "value": "+30",
+            "label": "Länder"
+        },
+        "servers": {
+            "value": "+8K",
+            "label": "Server"
+        }
+    },
+    "info": {
+        "title": "Wir bieten viele Funktionen, die Sie nutzen können",
+        "description": "Sie können die Funktionen erkunden, die wir mit Spaß bereitstellen, und jede Funktion hat ihre eigene Funktionalität.",
+        "list": [
+            "Leistungsstarker Online-Schutz.",
+            "Internet ohne Grenzen.",
+            "Supercharged VPN.",
+            "Keine spezifischen Zeitlimits."
+        ],
+        "button": "Weitere Informationen hier"
+    },
+    "bestProducts": {
+        "title": "Unsere besten Produkte",
+        "subtitle": "Ea voluptatem nobis nihil perspiciatis animi repellendus qui qui esse. Recusandae molestias praesentium hic odit quisquam quae ullam. At fugiat voluptatum voluptas saepe cupiditate iusto quisquam. Nobis incidunt voluptatem.",
+        "products": [
+            {
+                "title": "Odit sed accusantium",
+                "text": "Alle Beschwerden des Geistes sind groß und kommen von nichts. Architekt oder alles am Platz. Blanditiis klug und.",
+                "button": "Mehr Infos"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Alle Beschwerden des Geistes sind groß und kommen von nichts. Architekt oder alles am Platz. Blanditiis klug und.",
+                "button": "Mehr Infos"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Alle Beschwerden des Geistes sind groß und kommen von nichts. Architekt oder alles am Platz. Blanditiis klug und.",
+                "button": "Mehr Infos"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Alle Beschwerden des Geistes sind groß und kommen von nichts. Architekt oder alles am Platz. Blanditiis klug und.",
+                "button": "Mehr Infos"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Alle Beschwerden des Geistes sind groß und kommen von nichts. Architekt oder alles am Platz. Blanditiis klug und.",
+                "button": "Mehr Infos"
+            },
+            {
+                "title": "Odit sed accusantium",
+                "text": "Alle Beschwerden des Geistes sind groß und kommen von nichts. Architekt oder alles am Platz. Blanditiis klug und.",
+                "button": "Mehr Infos"
+            }
+        ]
+    },
+    "together": {
+        "title": "Besser zusammen",
+        "subtitle": "Quas et dolorem quod. Autem et labore dolor ab incidunt nisi. Qui voluptas quia sequi. Nihil est ullam omnis voluptas repellat voluptatibus error iure.",
+        "worldMapAlt": "Weltkarte",
+        "tooltips": {
+            "brazil": "Brasilien",
+            "china": "China"
+        }
+    },
+    "customers": {
+        "title": "Glückliche Kunden",
+        "subtitle": "Wo das Negative verschwindet, was für einige angenehm ist. Konsequente Beschwerden über Schmerzen, die den Schmerz rechtfertigen.",
+        "cards": [
+            {
+                "name": "Julia Walls",
+                "location": "Warschau, Polen",
+                "text": "Arbeiten, um Beschwerden zu beseitigen. Folgen Sie dem, was für die Zeit angenehm ist. Hass blockiert Probleme und führt zur Erfüllung von Verpflichtungen."
+            },
+            {
+                "name": "Nie Chan",
+                "location": "Shanxi, China",
+                "text": "Arbeiten, um Beschwerden zu beseitigen. Folgen Sie dem, was für die Zeit angenehm ist. Hass blockiert Probleme und führt zur Erfüllung von Verpflichtungen."
+            },
+            {
+                "name": "Alex Young",
+                "location": "Seoul, Südkorea",
+                "text": "Arbeiten, um Beschwerden zu beseitigen. Folgen Sie dem, was für die Zeit angenehm ist. Hass blockiert Probleme und führt zur Erfüllung von Verpflichtungen."
+            },
+            {
+                "name": "Niha Torns",
+                "location": "Russland",
+                "text": "Arbeiten, um Beschwerden zu beseitigen. Folgen Sie dem, was für die Zeit angenehm ist. Hass blockiert Probleme und führt zur Erfüllung von Verpflichtungen."
+            }
+        ]
+    },
+    "messageInfo": {
+        "title": "Schreiben Sie uns jetzt für weitere großartige Informationen",
+        "subtitle": "Wir helfen Ihnen bei allem, was Sie brauchen.",
+        "button": "Kontaktieren Sie uns"
+    }
+}

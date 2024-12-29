@@ -3,13 +3,13 @@
         <div class="message-info-container">
             <img src="@/assets/images/message-info.svg" alt="Network Image" class="message-info-img">
             <div class="message-info-inner">
-                <h2 class="message-info-title">Write us right now for more awesome info</h2>
+                <h2 class="message-info-title">{{$t('home.messageInfo.title')}}</h2>
                 <div class="message-info-subtitle">
-                    <p>We’ll help you in everything you need.</p>
+                    <p>{{$t('home.messageInfo.subtitle')}}</p>
                 </div>
             </div>
             <div class="message-button-shadow">
-                <a href="#" class="message-contact-btn">Contact us</a>
+                <a href="#" class="message-contact-btn">{{$t('home.messageInfo.button')}}</a>
             </div>
         </div>
     </section>
