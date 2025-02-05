@@ -16,15 +16,16 @@
     </section>
 </template>
 
-<script>
-export default {
-    computed: {
-        productList() {
-            const locale = this.$i18n.locale
-            return this.$i18n.messages[locale].home.bestProducts?.products || []
-        }
-    }
-}
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale, messages } = useI18n()
+
+const productList = computed(() => {
+    const loc = locale.value
+    return messages.value[loc].home.bestProducts?.products || []
+})
 </script>
 <style>
 .best-products {

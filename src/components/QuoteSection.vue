@@ -4,18 +4,16 @@
             <div class="quote-icon">
                 <img src="@/assets/images/quote-icon.svg" alt="Quote Icon">
             </div>
-            <blockquote class="quote-text">{{ $t ('about.quoteSection.text')}}</blockquote>
-            <cite class="quote-author">{{ $t ('about.quoteSection.caption')}}</cite>
+            <blockquote class="quote-text">{{ $t('about.quoteSection.text') }}</blockquote>
+            <cite class="quote-author">{{ $t('about.quoteSection.caption') }}</cite>
         </div>
     </section>
 </template>
-<script>
-export default {
-    
-}
+<script setup>
+
 </script>
 <style>
-    .quote-section {
+.quote-section {
     display: flex;
     justify-content: center;
     align-items: center;

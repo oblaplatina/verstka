@@ -1,23 +1,22 @@
 <template>
     <section class="jobs-info">
         <div class="jobs-info-container">
-            <img src="@/assets/images/online_research.svg" alt="" class="jobs-info-img">
+            <img src="@/assets/images/online_research.svg" alt="" class="jobs-info-img" />
             <div class="jobs-info-inner">
-                <h2 class="jobs-info-title">{{ $t ('about.jobsInfo.title') }}</h2>
+                <h2 class="jobs-info-title">{{ $t('about.jobsInfo.title') }}</h2>
                 <div class="jobs-info-subtitle">
-                    <p>{{ $t ('about.jobsInfo.subtitle') }}</p>
+                    <p>{{ $t('about.jobsInfo.subtitle') }}</p>
                 </div>
             </div>
             <div class="jobs-button-shadow">
-                <a href="#" class="jobs-btn">{{ $t ('about.jobsInfo.button') }}</a>
+                <a href="#" class="jobs-btn">{{ $t('about.jobsInfo.button') }}</a>
             </div>
         </div>
     </section>
 </template>
-<script>
-export default {
-    
-}
+
+<script setup>
+
 </script>
 <style>
 .jobs-info {
@@ -121,7 +120,7 @@ export default {
     .jobs-info-inner {
         flex: -1;
     }
-    
+
     .jobs-info-title {
         font-size: 25px;
         margin-right: 0;
@@ -145,7 +144,7 @@ export default {
 
     .jobs-info-img {
         flex: 0 0 auto;
-        margin-right: 20px; 
+        margin-right: 20px;
         margin-left: 0;
     }
 
@@ -154,10 +153,10 @@ export default {
         text-align: left;
         max-width: 250px;
     }
-    
+
     .jobs-info-title {
         font-size: 20px;
-       
+
     }
 
     .jobs-info-subtitle {
@@ -178,7 +177,7 @@ export default {
     .jobs-info-inner {
         text-align: center;
     }
-    
+
     .jobs-info-title {
         margin-top: 10px;
         margin-bottom: 10px;
