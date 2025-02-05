@@ -1,6 +1,6 @@
 <template>
     <section class="values-section">
-        <h2 class="values-title">{{$t ('about.valueSection.title')}}</h2>
+        <h2 class="values-title">{{ $t('about.valueSection.title') }}</h2>
 
         <div class="value-item">
             <div class="value-inner">
@@ -8,8 +8,8 @@
                     <img src="@/assets/images/one-vector.svg" alt="Number 1" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading1')}}</h3>
-                    <p class="value-description">{{$t ('about.valueSection.items.description1')}}</p>
+                    <h3 class="value-heading">{{ $t('about.valueSection.items.heading1') }}</h3>
+                    <p class="value-description">{{ $t('about.valueSection.items.description1') }}</p>
                 </div>
             </div>
         </div>
@@ -20,8 +20,8 @@
                     <img src="@/assets/images/two-vector.svg" alt="Number 2" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading2')}}</h3>
-                    <p class="value-description">{{$t ('about.valueSection.items.description2')}}</p>
+                    <h3 class="value-heading">{{ $t('about.valueSection.items.heading2') }}</h3>
+                    <p class="value-description">{{ $t('about.valueSection.items.description2') }}</p>
                 </div>
             </div>
         </div>
@@ -32,8 +32,8 @@
                     <img src="@/assets/images/three-vector.svg" alt="Number 3" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading3')}}</h3>
-                    <p class="value-description">{{$t ('about.valueSection.items.description3')}}</p>
+                    <h3 class="value-heading">{{ $t('about.valueSection.items.heading3') }}</h3>
+                    <p class="value-description">{{ $t('about.valueSection.items.description3') }}</p>
                 </div>
             </div>
         </div>
@@ -44,20 +44,18 @@
                     <img src="@/assets/images/four-vector.svg" alt="Number 4" class="value-number-img">
                 </div>
                 <div class="value-content">
-                    <h3 class="value-heading">{{$t ('about.valueSection.items.heading4')}}</h3>
-                    <p class="value-description">{{$t ('about.valueSection.items.description4')}}</p>
+                    <h3 class="value-heading">{{ $t('about.valueSection.items.heading4') }}</h3>
+                    <p class="value-description">{{ $t('about.valueSection.items.description4') }}</p>
                 </div>
             </div>
         </div>
     </section>
 </template>
-<script>
-export default {
-    
-}
+<script setup>
+
 </script>
 <style>
-    .values-section {
+.values-section {
     background-color: #fff;
     margin: 0 auto;
     max-width: 1170px;
@@ -145,7 +143,7 @@ export default {
         font-size: 24px;
         margin-bottom: 55px;
     }
-    
+
     .value-heading {
         font-size: 22px;
         margin-bottom: 10px;

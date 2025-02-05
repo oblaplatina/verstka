@@ -6,19 +6,14 @@
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            visible: true,
-        };
-    },
-    methods: {
-        closeNotificationBar() {
-            this.visible = false;
-        },
-    },
-};
+<script setup>
+import { ref } from 'vue'
+
+const visible = ref(true)
+
+function closeNotificationBar() {
+    visible.value = false
+}
 </script>
 <style>
 .notification-bar {

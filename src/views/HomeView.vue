@@ -13,39 +13,25 @@
     </div>
 </template>
 
-<script>
-import BestProduct from '@/components/BestProduct.vue';
-import Customers from '@/components/Customers.vue';
-import Footer from '@/components/Footer.vue';
-import Header from '@/components/Header.vue';
-import Info from '@/components/Info.vue';
-import Main from '@/components/Main.vue';
-import MessageInfo from '@/components/MessageInfo.vue';
-import NotificationBar from '@/components/NotificationBar.vue';
-import Stat from '@/components/Stat.vue';
-import Together from '@/components/Together.vue';
+<script setup>
+import Header from '@/components/Header.vue'
+import NotificationBar from '@/components/NotificationBar.vue'
+import Main from '@/components/Main.vue'
+import Stat from '@/components/Stat.vue'
+import Info from '@/components/Info.vue'
+import BestProduct from '@/components/BestProduct.vue'
+import Together from '@/components/Together.vue'
+import Customers from '@/components/Customers.vue'
+import MessageInfo from '@/components/MessageInfo.vue'
+import Footer from '@/components/Footer.vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-export default {
-    name: 'HomeView',
-    components: {
-        Header,
-        NotificationBar,
-        Main,
-        Stat,
-        Info,
-        BestProduct,
-        Together,
-        Customers,
-        MessageInfo,
-        Footer
-    },
-    computed: {
-        footerLinks() {
-            const locale = this.$i18n.locale
-            return this.$i18n.messages[locale]?.common?.footer?.homeFooter?.columns || []
-        }
-    }
-}
+const { locale, messages } = useI18n()
+
+const footerLinks = computed(() => {
+    return messages.value[locale.value]?.common?.footer?.homeFooter?.columns || []
+})
 </script>
 
 <style></style>

@@ -3,24 +3,22 @@
         <div class="message-info-container">
             <img src="@/assets/images/message-info.svg" alt="Network Image" class="message-info-img">
             <div class="message-info-inner">
-                <h2 class="message-info-title">{{$t('home.messageInfo.title')}}</h2>
+                <h2 class="message-info-title">{{ $t('home.messageInfo.title') }}</h2>
                 <div class="message-info-subtitle">
-                    <p>{{$t('home.messageInfo.subtitle')}}</p>
+                    <p>{{ $t('home.messageInfo.subtitle') }}</p>
                 </div>
             </div>
             <div class="message-button-shadow">
-                <a href="#" class="message-contact-btn">{{$t('home.messageInfo.button')}}</a>
+                <a href="#" class="message-contact-btn">{{ $t('home.messageInfo.button') }}</a>
             </div>
         </div>
     </section>
 </template>
-<script>
-export default {
-    
-}
+<script setup>
+
 </script>
 <style>
-    .message-info {
+.message-info {
     margin-bottom: -100px;
     z-index: 2;
     position: relative;
@@ -124,7 +122,7 @@ export default {
     .message-info-inner {
         flex: -1;
     }
-    
+
     .message-info-title {
         font-size: 25px;
         margin-right: 0;
@@ -147,7 +145,7 @@ export default {
 
     .message-info-img {
         flex: 0 0 auto;
-        margin-right: 20px; 
+        margin-right: 20px;
         margin-left: 0;
     }
 
@@ -156,10 +154,10 @@ export default {
         text-align: left;
         max-width: 250px;
     }
-    
+
     .message-info-title {
         font-size: 20px;
-       
+
     }
 
     .message-info-subtitle {
@@ -180,7 +178,7 @@ export default {
     .message-info-inner {
         text-align: center;
     }
-    
+
     .message-info-title {
         margin-top: 10px;
         margin-bottom: 10px;
