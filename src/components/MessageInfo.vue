@@ -8,14 +8,12 @@
                     <p>{{ $t('home.messageInfo.subtitle') }}</p>
                 </div>
             </div>
-            <div class="message-button-shadow">
-                <a href="#" class="message-contact-btn">{{ $t('home.messageInfo.button') }}</a>
-            </div>
+            <AppButton :text="$t('home.messageInfo.button')" />
         </div>
     </section>
 </template>
 <script setup>
-
+import AppButton from '@/components/AppButton.vue'
 </script>
 <style>
 .message-info {
@@ -80,44 +78,6 @@
     margin-right: 62px;
 }
 
-.message-button-shadow {
-    position: relative;
-    display: inline-block;
-}
-
-.message-contact-btn {
-    display: inline-block;
-    background-color: #8CC5F9;
-    position: relative;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 1.4;
-    padding: 17px 80px;
-    border-radius: 10px;
-    margin-right: 70px;
-    text-align: center;
-    z-index: 2;
-}
-
-.message-contact-btn:hover {
-    background-color: #878ABC;
-}
-
-.message-contact-btn::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 25.3px;
-    left: 19.09px;
-    right: 19.09px;
-    bottom: -25.3px;
-    background-color: #5F7A7E;
-    opacity: 0.22;
-    border-radius: 10px;
-    filter: blur(22px);
-    z-index: -1;
-}
-
 @media (max-width: 1186px) {
     .message-info-inner {
         flex: -1;
@@ -163,14 +123,6 @@
     .message-info-subtitle {
         font-size: 12px;
         margin-bottom: 25px;
-    }
-
-    .message-contact-btn {
-        font-size: 14px;
-        padding: 11px 50px;
-        flex: 0 0 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
     }
 }
 
