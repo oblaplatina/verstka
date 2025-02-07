@@ -23,76 +23,72 @@ const subtitleLines = computed(() => {
   return subtitles || []
 })
 </script>
-<style>
-.about-us-container {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 71px;
-  margin-bottom: 157px;
-}
 
-.about-us-title {
-  font-size: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.4;
-  color: #8CC5F9;
-  margin-bottom: 8px;
-}
+<style lang="scss" scoped>
+@import "@/assets/styles/_variables.scss";
 
-.about-us-subtitle {
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.37;
-  color: #4F5665;
-  margin-bottom: 87px;
-}
-
-.about-us-subtitle p {
-  margin-bottom: 35px;
-}
-
-.about-us-subtitle .highlight {
-  color: #8CC5F9;
-  font-weight: bold;
-}
-
-.crossed-flags-img {
-  margin-left: 135px;
-}
-
-@media (max-width: 1250px) {
-  .about-us-title {
-    font-size: 35px;
-  }
-
-  .about-us-subtitle {
-    font-size: 18px;
-  }
-
-  .about-us-subtitle p {
-    margin-bottom: 20px;
-  }
-
-  .crossed-flags-img {
-    width: 50%;
-    height: auto;
-  }
-}
-
-@media (max-width: 1250px) {
+.main-content {
   .about-us-container {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 71px;
+    margin-bottom: 157px;
+
+    .crossed-flags-img {
+      margin-left: 135px;
+    }
+
+    @media (max-width: 1250px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .about-us-title {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: $color-primary;
+    margin-bottom: 8px;
+
+    @media (max-width: 1250px) {
+      font-size: 35px;
+    }
   }
 
   .about-us-subtitle {
-    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.37;
+    color: $color-text;
+    margin-bottom: 87px;
+
+    p {
+      margin-bottom: 35px;
+    }
+
+    .highlight {
+      color: $color-primary;
+      font-weight: bold;
+    }
+
+    @media (max-width: 1250px) {
+      font-size: 18px;
+      margin-bottom: 25px;
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   .crossed-flags-img {
-    width: 50%;
-    margin-left: 0;
+    @media (max-width: 1250px) {
+      width: 50%;
+      height: auto;
+      margin-left: 0;
+    }
   }
 }
 </style>

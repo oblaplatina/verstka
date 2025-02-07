@@ -64,126 +64,150 @@ function hideTooltip(point) {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/styles/_variables.scss";
+
 .together {
   display: flex;
   text-align: center;
   margin-bottom: 110px;
   width: 100%;
   justify-content: center;
-}
 
-.together-container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+  .together-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 
-.together-inner {
-  width: 100%;
-}
+    .together-inner {
+      width: 100%;
 
-.together-title {
-  font-size: 35px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #0B132A;
-  margin-bottom: 13.5px;
-  margin-top: 0;
-}
+      .together-title {
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: $color-secondary;
+        margin-bottom: 13.5px;
+        margin-top: 0;
 
-.together-subtitle {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.8;
-  color: #4F5665;
-  max-width: 700px;
-  margin: 0 auto 155.8px;
-}
+        @media (max-width: 1186px) {
+          font-size: 25px;
+        }
+      }
 
-.together-world-map {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 1060px;
-  margin: 0 auto 36px;
-}
+      .together-subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.8;
+        color: $color-text;
+        max-width: 700px;
+        margin: 0 auto 155.8px;
 
-.world-map {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+        @media (max-width: 1186px) {
+          font-size: 14px;
+          margin-bottom: 80px;
+        }
+      }
 
-.svg-point {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+      .together-world-map {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 1060px;
+        margin: 0 auto 36px;
 
-.points-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+        .world-map {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
 
-.tooltip-b {
-  position: absolute;
-  left: 31%;
-  top: 62%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  color: #000000;
-  padding: 2px 54px;
-  border-radius: 8px;
-  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.7;
-  z-index: 10;
-}
+        .svg-point {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
 
-.tooltip-b::before {
-  content: "";
-  border: solid transparent;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  border-top-color: #ffffff;
-  border-width: 15px;
-  margin-left: -15px;
-  z-index: 1;
-}
+          .points-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
 
-.tooltip-c {
-  position: absolute;
-  left: 74%;
-  top: 20%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  color: #000000;
-  padding: 2px 54px;
-  border-radius: 8px;
-  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.7;
-  z-index: 10;
-}
+        .tooltip-b {
+          position: absolute;
+          left: 31%;
+          top: 62%;
+          transform: translate(-50%, -50%);
+          background-color: $color-white;
+          color: $color-dark;
+          padding: 2px 54px;
+          border-radius: 8px;
+          box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.25);
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 1.7;
+          z-index: 10;
 
-.tooltip-c::before {
-  content: "";
-  border: solid transparent;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  border-top-color: #ffffff;
-  border-width: 15px;
-  margin-left: -15px;
-  z-index: 1;
+          &::before {
+            content: "";
+            border: solid transparent;
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            border-top-color: $color-white;
+            border-width: 15px;
+            margin-left: -15px;
+            z-index: 1;
+          }
+        }
+
+        .tooltip-c {
+          position: absolute;
+          left: 74%;
+          top: 20%;
+          transform: translate(-50%, -50%);
+          background-color: $color-white;
+          color: $color-dark;
+          padding: 2px 54px;
+          border-radius: 8px;
+          box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.25);
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 1.7;
+          z-index: 10;
+
+          &::before {
+            content: "";
+            border: solid transparent;
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            border-top-color: $color-white;
+            border-width: 15px;
+            margin-left: -15px;
+            z-index: 1;
+          }
+        }
+
+        @media (max-width: 600px) {
+
+          .tooltip-b,
+          .tooltip-c {
+            font-size: 12px;
+            padding: 1px 5px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1195px) {
+    margin-bottom: 0;
+  }
 }
 
 .brand-logo {
@@ -191,63 +215,34 @@ function hideTooltip(point) {
   display: flex;
   justify-content: center;
   width: 100%;
-}
 
-.brand-logo-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 67px;
-  max-width: 1135px;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 1186px) {
-  .together-title {
-    font-size: 25px;
-  }
-
-  .together-subtitle {
-    font-size: 14px;
-    margin-bottom: 80px;
-  }
-}
-
-@media (max-width: 1195px) {
   .brand-logo-inner {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 67px;
+    max-width: 1135px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    @media (max-width: 1195px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      gap: 25px;
+
+      img {
+        width: 25%;
+        height: auto;
+      }
+    }
   }
 
-  .together {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .together-subtitle {
-    margin-bottom: 80px;
-  }
-
-  .tooltip-b,
-  .tooltip-c {
-    font-size: 12px;
-    padding: 1px 5px;
-  }
-
-  .brand-logo {
+  @media (max-width: 600px) {
     margin-bottom: 55px;
-  }
-
-  .brand-logo-inner {
-    gap: 25px;
-  }
-
-  .brand-logo-inner img {
-    width: 25%;
-    height: auto;
   }
 }
 </style>
