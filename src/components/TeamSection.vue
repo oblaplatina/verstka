@@ -251,7 +251,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/styles/_variables.scss";
+
 .team-container {
     margin-bottom: 102px;
 }
@@ -262,7 +264,7 @@ export default {
     font-size: 35px;
     font-weight: 500;
     line-height: 1.4;
-    color: #0b132a;
+    color: $color-secondary;
 }
 
 .team-nav-title {
@@ -284,20 +286,20 @@ export default {
     color: #4f4f4f;
     position: relative;
     cursor: pointer;
-}
 
-.team-nav-item.active {
-    color: #8cc5f9;
-}
+    &.active {
+        color: $color-primary;
 
-.team-nav-item.active::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #8cc5f9;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $color-primary;
+        }
+    }
 }
 
 .team-cards {
@@ -312,7 +314,7 @@ export default {
 }
 
 .profile-card {
-    border: 1px solid #8cc5f9;
+    border: 1px solid $color-primary;
     border-radius: 8px;
     text-align: center;
     width: 261px;
@@ -321,96 +323,98 @@ export default {
     overflow: hidden;
     cursor: default;
     transition: transform 0.3s ease;
-}
 
-.profile-card-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.3s ease;
-}
+    &:hover {
+        .profile-card-front {
+            opacity: 0;
+        }
 
-.profile-card-title-back {
-    position: absolute;
-    bottom: 51px;
-    left: 0;
-    width: 100%;
-    font-size: 22px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
-    color: #f5fafe;
-}
+        .profile-card-back {
+            opacity: 1;
+        }
+    }
 
-.profile-card-view-back {
-    position: absolute;
-    bottom: 24px;
-    left: 0;
-    width: 100%;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.2;
-    text-align: center;
-    color: #bdbdbd;
-    cursor: pointer;
-}
+    .profile-card-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease;
+    }
 
-.profile-card-front {
-    z-index: 2;
-}
+    .profile-card-title-back {
+        position: absolute;
+        bottom: 51px;
+        left: 0;
+        width: 100%;
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        color: #f5fafe;
+    }
 
-.profile-card-back {
-    opacity: 0;
-    z-index: 1;
-}
+    .profile-card-view-back {
+        position: absolute;
+        bottom: 24px;
+        left: 0;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.2;
+        text-align: center;
+        color: $color-footer-description;
+        cursor: pointer;
+    }
 
-.profile-card:hover .profile-card-front {
-    opacity: 0;
-}
+    .profile-card-front {
+        z-index: 2;
+    }
 
-.profile-card:hover .profile-card-back {
-    opacity: 1;
-}
+    .profile-card-back {
+        opacity: 0;
+        z-index: 1;
+    }
 
-.profile-card-ava {
-    border-radius: 50%;
-    margin-top: 26px;
-    margin-bottom: 19px;
-}
+    .profile-card-ava {
+        border-radius: 50%;
+        margin-top: 26px;
+        margin-bottom: 19px;
+    }
 
-.profile-card-title {
-    font-size: 22px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #8cc5f9;
-    margin-bottom: 12px;
-}
+    .profile-card-title {
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $color-primary;
+        margin-bottom: 12px;
+    }
 
-.profile-card-subtitle {
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #bdbdbd;
-    margin-bottom: 32px;
-    overflow-wrap: break-word;
-    margin-left: 29px;
-    margin-right: 30px;
-}
+    .profile-card-subtitle {
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $color-footer-description;
+        margin-bottom: 32px;
+        overflow-wrap: break-word;
+        margin-left: 29px;
+        margin-right: 30px;
+    }
 
-.profile-card-view {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.2;
-    color: #bdbdbd;
-    margin-bottom: 24px;
-    margin-left: 73px;
-    margin-right: 73px;
-    cursor: pointer;
+    .profile-card-view {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.2;
+        color: $color-footer-description;
+        margin-bottom: 24px;
+        margin-left: 73px;
+        margin-right: 73px;
+        cursor: pointer;
+    }
 }
 
 .load-more {
@@ -435,10 +439,10 @@ export default {
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 50px;
     border-radius: 44px;
-    border: 4px solid #8cc5f9;
+    border: 4px solid $color-primary;
     display: flex;
     flex-direction: column;
     max-width: 70vw;
@@ -483,7 +487,7 @@ export default {
     font-style: italic;
     font-weight: 700;
     text-align: left;
-    color: #8cc5f9;
+    color: $color-primary;
     margin-bottom: 24px;
 }
 
