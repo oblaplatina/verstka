@@ -64,12 +64,12 @@ const isMobile = ref(false)
 const isOpen = ref([])
 let mediaQuery = null
 
-function handleMediaChange(e) {
+const handleMediaChange = (e) => {
   isMobile.value = e.matches
   isOpen.value = Array(props.links.length).fill(!isMobile.value)
 }
 
-function toggleDropdown(index) {
+const toggleDropdown = (index) => {
   if (isMobile.value) {
     isOpen.value[index] = !isOpen.value[index]
   }

@@ -55,11 +55,11 @@ const visibleTooltip = reactive({
   china: false
 })
 
-function showTooltip(point) {
+const showTooltip = (point) => {
   visibleTooltip[point] = true
 }
 
-function hideTooltip(point) {
+const hideTooltip = (point) => {
   visibleTooltip[point] = false
 }
 </script>

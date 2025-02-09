@@ -57,7 +57,7 @@ const localizedCards = computed(() => {
     return msgs?.home.customers?.cards || []
 })
 
-function updateThumbPosition() {
+const updateThumbPosition = () => {
     const sliderEl = slider.value
     const thumbEl = thumb.value
     const scrollbarEl = scrollbar.value
@@ -69,17 +69,17 @@ function updateThumbPosition() {
     thumbEl.style.left = `${scrollPercentage * thumbMaxPosition}px`
 }
 
-function startDraggingCardFn(e) {
+const startDraggingCardFn = (e) => {
     isDraggingCard.value = true
     startX.value = e.pageX - slider.value.offsetLeft
     scrollLeftVal.value = slider.value.scrollLeft
 }
 
-function stopDraggingCardFn() {
+const stopDraggingCardFn = () => {
     isDraggingCard.value = false
 }
 
-function dragCardFn(e) {
+const dragCardFn = (e) => {
     if (!isDraggingCard.value || isDraggingThumb.value) return
     const x = e.pageX - slider.value.offsetLeft - startX.value
     const walk = x * 1.5
@@ -87,13 +87,13 @@ function dragCardFn(e) {
     updateThumbPosition()
 }
 
-function touchStart(e) {
+const touchStart = (e) => {
     isDraggingCard.value = true
     startX.value = e.touches[0].pageX - slider.value.offsetLeft
     scrollLeftVal.value = slider.value.scrollLeft
 }
 
-function touchMove(e) {
+const touchMove = (e) => {
     if (!isDraggingCard.value) return
     const x = e.touches[0].pageX - slider.value.offsetLeft - startX.value
     const walk = x * 1.5
@@ -101,11 +101,11 @@ function touchMove(e) {
     updateThumbPosition()
 }
 
-function touchEnd() {
+const touchEnd = () => {
     isDraggingCard.value = false
 }
 
-function startDraggingThumbFn(e) {
+const startDraggingThumbFn = (e) => {
     isDraggingThumb.value = true
     startX.value = e.pageX
     scrollLeftVal.value = slider.value.scrollLeft
@@ -113,7 +113,7 @@ function startDraggingThumbFn(e) {
     document.addEventListener("mouseup", stopDraggingThumbFn)
 }
 
-function dragThumbFn(e) {
+const dragThumbFn = (e) => {
     if (!isDraggingThumb.value) return
     const thumbEl = thumb.value
     const scrollbarEl = scrollbar.value
@@ -132,13 +132,13 @@ function dragThumbFn(e) {
     thumbEl.style.left = `${scrollPercentage * thumbMaxPosition}px`
 }
 
-function stopDraggingThumbFn() {
+const stopDraggingThumbFn = () => {
     isDraggingThumb.value = false
     document.removeEventListener("mousemove", dragThumbFn)
     document.removeEventListener("mouseup", stopDraggingThumbFn)
 }
 
-function clickScrollbar(e) {
+const clickScrollbar = (e) => {
     if (e.target === thumb.value) return
     const scrollbarEl = scrollbar.value
     const thumbEl = thumb.value

@@ -64,7 +64,7 @@ const languages = [
     { code: 'De', flag: flagDe }
 ]
 
-function findCurrentLang(currentLangCode) {
+const findCurrentLang = (currentLangCode) => {
     return languages.find(lang => lang.code.toLowerCase() === currentLangCode)
 }
 
@@ -75,19 +75,19 @@ const otherLanguages = computed(() => {
     return languages.filter(lang => lang.code !== selectedLang.value.code)
 })
 
-function isActive(path) {
+const isActive = (path) => {
     return route.path === path
 }
 
-function showDropdown() {
+const showDropdown = () => {
     isDropdownOpen.value = true
 }
 
-function hideDropdown() {
+const hideDropdown = () => {
     isDropdownOpen.value = false
 }
 
-function selectLanguage(lang) {
+const selectLanguage = (lang) => {
     selectedLang.value = lang
     isDropdownOpen.value = false
     locale.value = lang.code.toLowerCase()

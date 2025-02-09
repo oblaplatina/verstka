@@ -220,26 +220,26 @@ const hasMoreMembers = computed(() => {
     return visibleMembers.value.length < total
 })
 
-function selectTeam(tab) {
+const selectTeam = (tab) => {
     activeTab.value = tab
     currentPage.value = 1
 }
 
-function loadMoreCards() {
+const loadMoreCards = () => {
     currentPage.value++
 }
 
-function openModal(member) {
+const openModal = (member) => {
     selectedMember.value = member
     modalVisible.value = true
 }
 
-function closeModal() {
+const closeModal = () => {
     modalVisible.value = false
     selectedMember.value = null
 }
 
-function memberField(slug, field) {
+const memberField = (slug, field) => {
     const key = `about.team.members.${slug}.${field}`
     const val = t(key)
     return (val === key) ? null : val

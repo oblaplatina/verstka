@@ -11,7 +11,7 @@ import { ref } from 'vue'
 
 const visible = ref(true)
 
-function closeNotificationBar() {
+const closeNotificationBar = () => {
     visible.value = false
 }
 </script>
