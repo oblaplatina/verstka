@@ -3,21 +3,18 @@
         <div class="jobs-info-container">
             <img src="@/assets/images/online_research.svg" alt="" class="jobs-info-img">
             <div class="jobs-info-inner">
-                <h2 class="jobs-info-title">{{ $t ('about.jobsInfo.title') }}</h2>
+                <h2 class="jobs-info-title">{{ $t('about.jobsInfo.title') }}</h2>
                 <div class="jobs-info-subtitle">
-                    <p>{{ $t ('about.jobsInfo.subtitle') }}</p>
+                    <p>{{ $t('about.jobsInfo.subtitle') }}</p>
                 </div>
             </div>
-            <div class="jobs-button-shadow">
-                <a href="#" class="jobs-btn">{{ $t ('about.jobsInfo.button') }}</a>
-            </div>
+            <AppButton :text="$t('about.jobsInfo.button')" />
         </div>
     </section>
 </template>
-<script>
-export default {
-    
-}
+
+<script setup>
+import AppButton from '@/components/AppButton.vue'
 </script>
 <style>
 .jobs-info {
@@ -83,45 +80,11 @@ export default {
     margin-right: 44px;
 }
 
-.jobs-button-shadow {
-    position: relative;
-    display: inline-block;
-}
-
-.jobs-btn {
-    display: inline-block;
-    background-color: #8CC5F9;
-    position: relative;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 1.4;
-    padding: 17px 80px;
-    border-radius: 10px;
-    margin-right: 70px;
-    text-align: center;
-    z-index: 2;
-}
-
-.jobs-btn::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 25.3px;
-    left: 19.09px;
-    right: 19.09px;
-    bottom: -25.3px;
-    background-color: #8CC5F938;
-    opacity: 22;
-    border-radius: 10px;
-    filter: blur(22px);
-    z-index: -1;
-}
-
 @media (max-width: 1186px) {
     .jobs-info-inner {
         flex: -1;
     }
-    
+
     .jobs-info-title {
         font-size: 25px;
         margin-right: 0;
@@ -145,7 +108,7 @@ export default {
 
     .jobs-info-img {
         flex: 0 0 auto;
-        margin-right: 20px; 
+        margin-right: 20px;
         margin-left: 0;
     }
 
@@ -154,23 +117,15 @@ export default {
         text-align: left;
         max-width: 250px;
     }
-    
+
     .jobs-info-title {
         font-size: 20px;
-       
+
     }
 
     .jobs-info-subtitle {
         font-size: 12px;
         margin-bottom: 25px;
-    }
-
-    .jobs-btn {
-        font-size: 14px;
-        padding: 11px 50px;
-        flex: 0 0 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
     }
 }
 
@@ -178,7 +133,7 @@ export default {
     .jobs-info-inner {
         text-align: center;
     }
-    
+
     .jobs-info-title {
         margin-top: 10px;
         margin-bottom: 10px;

@@ -9,23 +9,25 @@
                     <img src="@/assets/images/product-card-icon.svg" alt="" class="product-card-icon">
                     <h3 class="product-card-title">{{ product.title }}</h3>
                     <p class="product-card-text">{{ product.text }}</p>
-                    <a href="#" class="product-card-button">{{ product.button }}</a>
+                    <AppButton :text="product.button" variant="product" />
                 </div>
             </div>
         </div>
     </section>
 </template>
 
-<script>
-export default {
-    computed: {
-        productList() {
-            const locale = this.$i18n.locale
-            return this.$i18n.messages[locale].home.bestProducts?.products || []
-        }
-    }
-}
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import AppButton from '@/components/AppButton.vue'
+
+const { locale, messages } = useI18n()
+const productList = computed(() => {
+    const loc = locale.value;
+    return messages.value[loc].home.bestProducts?.products || [];
+})
 </script>
+
 <style>
 .best-products {
     display: flex;
@@ -109,23 +111,6 @@ export default {
     margin-bottom: 46.3px;
 }
 
-.product-card-button {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.8;
-    color: #8CC5F9;
-    border: 2px solid rgba(140, 197, 249, 1);
-    border-radius: 47px;
-    padding: 10px 30px;
-
-}
-
-.product-card-button:hover {
-    background: rgba(135, 138, 188, 1);
-    border: rgba(135, 138, 188, 1);
-    color: #FFFFFF;
-}
-
 @media (max-width: 1186px) {
 
     .section-best-products-title {
@@ -149,10 +134,6 @@ export default {
 
     .product-card-text {
         font-size: 16px;
-    }
-
-    .product-card-button {
-        font-size: 14px;
     }
 }
 
@@ -188,10 +169,6 @@ export default {
     .product-card-text {
         font-size: 12px;
     }
-
-    .product-card-button {
-        font-size: 10px;
-    }
 }
 
 @media (max-width: 470px) {
@@ -217,10 +194,6 @@ export default {
 
     .product-card-text {
         font-size: 16px;
-    }
-
-    .product-card-button {
-        font-size: 14px;
     }
 }
 </style>
