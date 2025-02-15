@@ -21,8 +21,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .jobs-info {
     margin-bottom: -100px;
     z-index: 2;
@@ -36,7 +34,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         box-shadow: $color-shadow 5px 5px 5px -5px;
-        border-radius: 10px;
+        border-radius: $radius-base;
         max-width: 1140px;
 
         &::before {
@@ -48,13 +46,13 @@ export default {
             bottom: -33px;
             background-color: $color-secondary;
             filter: blur(50px);
-            border-radius: 10px;
+            border-radius: $radius-base;
             z-index: -1;
             opacity: 0.1;
             pointer-events: none;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: $bp-900) {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -68,17 +66,17 @@ export default {
         flex-direction: column;
         flex: 1;
 
-        @media (max-width: 1186px) {
+        @media (max-width: $bp-1186) {
             flex: -1;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: $bp-900) {
             flex: 0 0 auto;
             text-align: left;
             max-width: 250px;
         }
 
-        @media (max-width: 438px) {
+        @media (max-width: $bp-438) {
             text-align: center;
         }
     }
@@ -92,17 +90,17 @@ export default {
         margin-top: 47px;
         margin-right: 148px;
 
-        @media (max-width: 1186px) {
+        @media (max-width: $bp-1186) {
             font-size: 25px;
             margin-right: 0;
             max-width: 400px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: $bp-900) {
             font-size: 20px;
         }
 
-        @media (max-width: 438px) {
+        @media (max-width: $bp-438) {
             margin-top: 10px;
             margin-bottom: 10px;
         }
@@ -116,12 +114,12 @@ export default {
         margin-bottom: 47px;
         margin-right: 148px;
 
-        @media (max-width: 1186px) {
+        @media (max-width: $bp-1186) {
             font-size: 14px;
             margin-right: 30px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: $bp-900) {
             font-size: 12px;
             margin-bottom: 25px;
         }
@@ -131,13 +129,13 @@ export default {
         margin-left: 46px;
         margin-right: 44px;
 
-        @media (max-width: 900px) {
+        @media (max-width: $bp-900) {
             flex: 0 0 auto;
             margin-right: 20px;
             margin-left: 0;
         }
 
-        @media (max-width: 438px) {
+        @media (max-width: $bp-438) {
             margin-top: 20px;
         }
     }

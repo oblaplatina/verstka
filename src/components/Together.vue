@@ -16,13 +16,15 @@
               {{ $t('home.together.tooltips.china') }}
             </div>
             <svg viewBox="0 0 1060 539" fill="none" xmlns="http://www.w3.org/2000/svg" class="points-svg">
-              <g id="brazil-point" @mouseenter="showTooltip('brazil')" @mouseleave="hideTooltip('brazil')" @touchstart="showTooltip('brazil')" @touchend="showTooltip('brazil')">
+              <g id="brazil-point" @mouseenter="showTooltip('brazil')" @mouseleave="hideTooltip('brazil')"
+                @touchstart="showTooltip('brazil')" @touchend="showTooltip('brazil')">
                 <circle cx="333.291" cy="383.34" r="17.434" fill="white" />
                 <circle cx="333.291" cy="383.34" r="16.2025" stroke="#8CC5F9" stroke-width="2.46311" />
                 <circle cx="333.292" cy="383.34" r="13.1166" fill="white" stroke="#8CC5F9" stroke-width="2.46311" />
                 <circle cx="333.291" cy="383.34" r="5.05765" fill="#8CC5F9" stroke="#8CC5F9" stroke-width="2.46311" />
               </g>
-              <g id="china-point" @mouseenter="showTooltip('china')" @mouseleave="hideTooltip('china')" @touchstart="showTooltip('china')" @touchend="showTooltip('china')">
+              <g id="china-point" @mouseenter="showTooltip('china')" @mouseleave="hideTooltip('china')"
+                @touchstart="showTooltip('china')" @touchend="showTooltip('china')">
                 <circle cx="782.66" cy="150.66" r="21.6599" fill="white" />
                 <circle cx="782.66" cy="150.66" r="20.1298" stroke="#8CC5F9" stroke-width="3.06015" />
                 <circle cx="782.66" cy="150.66" r="16.296" fill="white" stroke="#8CC5F9" stroke-width="3.06015" />
@@ -67,8 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .together {
   display: flex;
   text-align: center;
@@ -93,7 +93,7 @@ export default {
         margin-bottom: 13.5px;
         margin-top: 0;
 
-        @media (max-width: 1186px) {
+        @media (max-width: $bp-1186) {
           font-size: 25px;
         }
       }
@@ -106,7 +106,7 @@ export default {
         max-width: 700px;
         margin: 0 auto 155.8px;
 
-        @media (max-width: 1186px) {
+        @media (max-width: $bp-1186) {
           font-size: 14px;
           margin-bottom: 80px;
         }
@@ -139,63 +139,45 @@ export default {
           }
         }
 
-        .tooltip-b {
+        .tooltip-b,
+        .tooltip-c {
           position: absolute;
+          background-color: $color-white;
+          color: $color-bg-base;
+          padding: 2px 54px;
+          border-radius: 8px;
+          box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.25);
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 1.7;
+          z-index: 10;
+
+          &::before {
+            content: "";
+            border: solid transparent;
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            border-top-color: $color-white;
+            border-width: 15px;
+            margin-left: -15px;
+            z-index: 1;
+          }
+        }
+
+        .tooltip-b {
           left: 31%;
           top: 62%;
           transform: translate(-50%, -50%);
-          background-color: $color-white;
-          color: $color-dark;
-          padding: 2px 54px;
-          border-radius: 8px;
-          box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.25);
-          font-size: 18px;
-          font-weight: 400;
-          line-height: 1.7;
-          z-index: 10;
-
-          &::before {
-            content: "";
-            border: solid transparent;
-            position: absolute;
-            top: 90%;
-            left: 50%;
-            border-top-color: $color-white;
-            border-width: 15px;
-            margin-left: -15px;
-            z-index: 1;
-          }
         }
 
         .tooltip-c {
-          position: absolute;
           left: 74%;
           top: 20%;
           transform: translate(-50%, -50%);
-          background-color: $color-white;
-          color: $color-dark;
-          padding: 2px 54px;
-          border-radius: 8px;
-          box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.25);
-          font-size: 18px;
-          font-weight: 400;
-          line-height: 1.7;
-          z-index: 10;
-
-          &::before {
-            content: "";
-            border: solid transparent;
-            position: absolute;
-            top: 90%;
-            left: 50%;
-            border-top-color: $color-white;
-            border-width: 15px;
-            margin-left: -15px;
-            z-index: 1;
-          }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: $bp-600) {
 
           .tooltip-b,
           .tooltip-c {
@@ -207,7 +189,7 @@ export default {
     }
   }
 
-  @media (max-width: 1195px) {
+  @media (max-width: $bp-1195) {
     margin-bottom: 0;
   }
 }
@@ -228,12 +210,12 @@ export default {
     padding: 0 20px;
     box-sizing: border-box;
 
-    @media (max-width: 1195px) {
+    @media (max-width: $bp-1195) {
       flex-wrap: wrap;
       justify-content: center;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $bp-600) {
       gap: 25px;
 
       img {
@@ -243,7 +225,7 @@ export default {
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: $bp-600) {
     margin-bottom: 55px;
   }
 }

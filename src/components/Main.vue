@@ -31,8 +31,6 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .main-content {
     margin-bottom: 157.55px;
 
@@ -68,7 +66,7 @@ export default {
             margin-right: -18px;
         }
 
-        @media (max-width: 1250px) {
+        @media (max-width: $bp-1250) {
             align-items: center;
             gap: 15px;
 
@@ -90,7 +88,7 @@ export default {
             }
         }
 
-        @media (max-width: 1040px) {
+        @media (max-width: $bp-1040) {
             .text-container {
                 .main-title {
                     font-size: 30px;
@@ -108,7 +106,7 @@ export default {
             }
         }
 
-        @media (max-width: 840px) {
+        @media (max-width: $bp-840) {
             flex-direction: column;
             margin-left: 0;
 
@@ -136,7 +134,7 @@ export default {
             }
         }
 
-        @media (max-width: 670px) {
+        @media (max-width: $bp-670) {
             .network-img {
                 width: 80%;
             }
@@ -153,10 +151,5 @@ export default {
             }
         }
     }
-}
-
-.button-shadow {
-    position: relative;
-    display: inline-block;
 }
 </style>

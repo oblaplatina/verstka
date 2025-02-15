@@ -28,8 +28,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .best-products {
     display: flex;
     text-align: center;
@@ -42,16 +40,14 @@ export default {
         left: 0;
 
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             top: -81px;
             left: 0;
             width: 100%;
             height: 70vh;
             z-index: -1;
-            background: linear-gradient(180deg,
-                    $color-light-gray -45.04%,
-                    rgba(248, 248, 248, 0) 88.56%);
+            background: linear-gradient(180deg, $color-bg-light -45.04%, rgba(248, 248, 248, 0) 88.56%);
         }
     }
 
@@ -99,7 +95,7 @@ export default {
                 font-size: 18px;
                 font-weight: 500;
                 line-height: 1.7;
-                color: $color-dark;
+                color: $color-bg-base;
                 margin-bottom: 16px;
             }
 
@@ -107,29 +103,13 @@ export default {
                 font-size: 18px;
                 font-weight: 400;
                 line-height: 1.7;
-                color: $color-dark;
+                color: $color-bg-base;
                 margin-bottom: 46.3px;
-            }
-
-            .product-card-button {
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1.8;
-                color: $color-primary;
-                border: 2px solid $color-primary;
-                border-radius: 47px;
-                padding: 10px 30px;
-
-                &:hover {
-                    background: $color-btn-hover;
-                    border: $color-btn-hover;
-                    color: $color-white;
-                }
             }
         }
     }
 
-    @media (max-width: 1186px) {
+    @media (max-width: $bp-1186) {
         .section-best-products-title {
             font-size: 25px;
         }
@@ -152,13 +132,9 @@ export default {
         .product-card-text {
             font-size: 16px;
         }
-
-        .product-card-button {
-            font-size: 14px;
-        }
     }
 
-    @media (max-width: 790px) {
+    @media (max-width: $bp-790) {
         .product-card {
             flex: 0 1 calc(50% - 15px);
             max-width: 100%;
@@ -171,7 +147,7 @@ export default {
         margin-bottom: 90px;
     }
 
-    @media (max-width: 630px) {
+    @media (max-width: $bp-630) {
         .section-best-products-title {
             font-size: 20px;
         }
@@ -188,13 +164,9 @@ export default {
         .product-card-text {
             font-size: 12px;
         }
-
-        .product-card-button {
-            font-size: 10px;
-        }
     }
 
-    @media (max-width: 470px) {
+    @media (max-width: $bp-470) {
         .section-best-products-title {
             font-size: 25px;
         }
@@ -217,10 +189,6 @@ export default {
 
         .product-card-text {
             font-size: 16px;
-        }
-
-        .product-card-button {
-            font-size: 14px;
         }
     }
 }

@@ -22,10 +22,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .notification-bar {
-    background-color: $color-dark;
+    background-color: $color-bg-base;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -51,7 +49,7 @@ export default {
         font-size: 18px;
         padding: 21px;
 
-        @media (max-width: 430px) {
+        @media (max-width: $bp-430) {
             font-size: 12px;
         }
     }

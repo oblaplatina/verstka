@@ -58,8 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .values-section {
     background-color: $color-white;
     margin: 0 auto;

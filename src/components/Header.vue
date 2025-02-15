@@ -9,7 +9,8 @@
                 <h3 class="brand-name">{{ $t('common.header.brandName') }}</h3>
                 <nav class="menu">
                     <ul class="menu-list">
-                        <li v-for="(item, index) in menuItems" :key="index" :class="{ active: isActive(item.path) }" class="menu-link">
+                        <li v-for="(item, index) in menuItems" :key="index" :class="{ active: isActive(item.path) }"
+                            class="menu-link">
                             <router-link :to="item.path">
                                 {{ $t(`common.header.menuItems.${item.label}`) }}
                             </router-link>
@@ -26,7 +27,8 @@
                         <img src="@/assets/images/lang-arrow.svg" alt="" class="arrow-icon" />
                     </div>
                     <div class="lang-dropdown" v-if="isDropdownOpen">
-                        <a href="#" v-for="lang in otherLanguages" :key="lang.code" class="lang-option" @click.prevent="selectLanguage(lang)">
+                        <a href="#" v-for="lang in otherLanguages" :key="lang.code" class="lang-option"
+                            @click.prevent="selectLanguage(lang)">
                             {{ lang.code }}
                             <img :src="lang.flag" :alt="lang.code" />
                         </a>
@@ -103,20 +105,19 @@ export default {
     },
 };
 </script>
-<style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
 
+<style lang="scss" scoped>
 .header {
     .header-inner {
         display: flex;
         justify-content: space-between;
         margin-bottom: 85px;
 
-        @media (max-width: 1235px) {
+        @media (max-width: $bp-1235) {
             margin-bottom: 50px;
         }
 
-        @media (max-width: 430px) {
+        @media (max-width: $bp-430) {
             justify-content: flex-start;
         }
     }
@@ -124,7 +125,7 @@ export default {
     .logo {
         margin-top: 83px;
 
-        @media (max-width: 430px) {
+        @media (max-width: $bp-430) {
             img {
                 width: 35px;
             }
@@ -137,13 +138,12 @@ export default {
         color: $color-primary;
         font-family: "Marko One", serif;
         font-weight: 400;
-        font-style: normal;
         line-height: 1.1;
         text-transform: uppercase;
         margin-right: auto;
         margin-left: 11px;
 
-        @media (max-width: 430px) {
+        @media (max-width: $bp-430) {
             margin-left: 0;
             font-size: 16px;
             margin-right: 20px;
@@ -156,21 +156,21 @@ export default {
             margin-top: 88.62px;
             gap: 0 43px;
             font-size: 16px;
-            color: $color-dark;
+            color: $color-bg-base;
             margin-right: 255px;
             margin-left: 159px;
 
-            @media (max-width: 1235px) {
+            @media (max-width: $bp-1235) {
                 margin-left: auto;
                 margin-right: 0;
             }
 
-            @media (max-width: 900px) {
+            @media (max-width: $bp-900) {
                 flex-direction: column;
                 gap: 10px;
             }
 
-            @media (max-width: 430px) {
+            @media (max-width: $bp-430) {
                 font-size: 12px;
             }
 
@@ -242,7 +242,7 @@ export default {
 
             .lang-option {
                 display: flex;
-                margin: 15px 15px;
+                margin: 15px;
                 justify-content: space-between;
                 gap: 5px;
             }
@@ -252,11 +252,11 @@ export default {
             display: block;
         }
 
-        @media (max-width: 1235px) {
+        @media (max-width: $bp-1235) {
             margin-left: auto;
         }
 
-        @media (max-width: 430px) {
+        @media (max-width: $bp-430) {
             margin-left: 15px;
             font-size: 12px;
 

@@ -14,9 +14,8 @@ export default {
 
 }
 </script>
-<style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
 
+<style lang="scss" scoped>
 .quote-section {
     display: flex;
     justify-content: center;
@@ -74,7 +73,7 @@ export default {
         }
     }
 
-    @media (max-width: 1260px) {
+    @media (max-width: $bp-1260) {
         margin-bottom: 70px;
 
         .quote-content {

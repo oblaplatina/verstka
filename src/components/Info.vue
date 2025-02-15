@@ -33,8 +33,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .info {
     margin-bottom: 151px;
     margin-left: 71px;
@@ -99,7 +97,7 @@ export default {
         }
     }
 
-    @media (max-width: 1186px) {
+    @media (max-width: $bp-1186) {
         margin-left: 0;
 
         .container-info {
@@ -132,7 +130,7 @@ export default {
         }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: $bp-720) {
         .container-info {
             flex-direction: column-reverse;
             align-items: center;
