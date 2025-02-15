@@ -1,18 +1,28 @@
 <template>
     <div class="button-shadow">
-        <a href="#" class="btn" @click.prevent="handleClick">
-            <slot>{{ text }}</slot>
+        <a href="#" :class="['app-button', variantClass]" @click.prevent="handleClick">
+            {{ text }}
         </a>
     </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const emit = defineEmits(['click'])
 const props = defineProps({
     text: {
         type: String,
         default: ''
+    },
+    variant: {
+        type: String,
+        default: 'primary'
     }
+})
+
+const variantClass = computed(() => {
+    return props.variant === 'product' ? 'btn--product' : 'btn--primary'
 })
 
 function handleClick(event) {
@@ -26,7 +36,7 @@ function handleClick(event) {
     display: inline-block;
 }
 
-.btn {
+.btn--primary {
     display: inline-block;
     background-color: #8CC5F9;
     color: #FFFFFF;
@@ -41,11 +51,11 @@ function handleClick(event) {
     transition: background-color 0.3s;
 }
 
-.btn:hover {
+.btn--primary:hover {
     background-color: #878ABC;
 }
 
-.btn::before {
+.btn--primary::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -61,12 +71,47 @@ function handleClick(event) {
 }
 
 @media (max-width: 900px) {
-    .btn {
+    .btn--primary {
         font-size: 14px;
         padding: 11px 50px;
         flex: 0 0 100%;
         margin-right: 0;
         margin-bottom: 20px;
+    }
+}
+
+.btn--product {
+    background-color: transparent;
+    color: #8CC5F9;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+    border: 2px solid rgba(140, 197, 249, 1);
+    border-radius: 47px;
+    padding: 10px 30px;
+}
+
+.btn--product:hover {
+    background: rgba(135, 138, 188, 1);
+    border-color: rgba(135, 138, 188, 1);
+    color: #FFFFFF;
+}
+
+@media (max-width: 1186px) {
+    .btn--product {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 630px) {
+    .btn--product {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 470px) {
+    .btn--product {
+        font-size: 14px;
     }
 }
 </style>

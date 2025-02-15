@@ -10,7 +10,7 @@
                         {{ $t('home.main.subtitle.' + index) }}
                     </p>
                 </div>
-                <AppButton :text="$t('about.jobsInfo.button')" />
+                <AppButton :text="$t('home.main.button')" />
             </div>
             <img src="@/assets/images/network.svg" alt="Network Image" class="network-img" />
         </section>
