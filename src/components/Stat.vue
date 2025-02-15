@@ -23,9 +23,8 @@ export default {
     name: 'Stat',
 }
 </script>
-<style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
 
+<style lang="scss" scoped>
 .stat {
     .stat-container {
         position: relative;
@@ -91,7 +90,7 @@ export default {
         }
     }
 
-    @media (max-width: 1240px) {
+    @media (max-width: $bp-1240) {
         .stat-container {
             .stat-content {
                 margin: 0;
@@ -107,7 +106,7 @@ export default {
         }
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: $bp-840) {
         .stat-container {
             margin-bottom: 95px;
 
@@ -138,7 +137,7 @@ export default {
         }
     }
 
-    @media (max-width: 630px) {
+    @media (max-width: $bp-630) {
         .stat-container {
             .stat-content {
                 .stat-item {
@@ -153,7 +152,7 @@ export default {
         }
     }
 
-    @media (max-width: 470px) {
+    @media (max-width: $bp-470) {
         .stat-container {
             .stat-content {
                 .stat-item {

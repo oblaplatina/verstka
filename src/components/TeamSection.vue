@@ -252,8 +252,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .team-container {
     margin-bottom: 102px;
 }
@@ -268,7 +266,6 @@ export default {
 }
 
 .team-nav-title {
-    align-items: center;
     display: flex;
     justify-content: center;
     margin-bottom: 81px;
@@ -467,11 +464,13 @@ export default {
     flex-wrap: wrap;
 }
 
-.modal-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    flex-shrink: 0;
+.modal-image {
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        flex-shrink: 0;
+    }
 }
 
 .modal-info {
@@ -505,11 +504,13 @@ export default {
     margin-top: 21px;
 }
 
-.social-icon img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-bottom: 60px;
+.social-icon {
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+    }
 }
 
 .modal-quote {
@@ -521,7 +522,7 @@ export default {
     color: #878abc;
 }
 
-@media (max-width: 1658px) {
+@media (max-width: $bp-1658) {
     .modal-title {
         font-size: 35px;
     }
@@ -557,7 +558,7 @@ export default {
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: $bp-1100) {
     .modal-body {
         flex-direction: column;
         align-items: center;
@@ -568,7 +569,7 @@ export default {
     }
 }
 
-@media (max-width: 660px) {
+@media (max-width: $bp-660) {
     .modal-body {
         gap: 10px;
     }

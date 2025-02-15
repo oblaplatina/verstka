@@ -7,7 +7,7 @@
 
         <!-- Вывод массива строк напрямую -->
         <div class="about-us-subtitle">
-          <p v-for="(line, index) in subtitleLines" :key="index" v-html="line">
+          <p class="subtitle-line" v-for="(line, index) in subtitleLines" :key="index" v-html="line">
           </p>
         </div>
       </div>
@@ -29,8 +29,6 @@ const subtitleLines = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .main-content {
   .about-us-container {
     display: flex;
@@ -40,9 +38,15 @@ const subtitleLines = computed(() => {
 
     .crossed-flags-img {
       margin-left: 135px;
+
+      @media (max-width: $bp-1250) {
+        width: 50%;
+        height: auto;
+        margin-left: 0;
+      }
     }
 
-    @media (max-width: 1250px) {
+    @media (max-width: $bp-1250) {
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -56,7 +60,7 @@ const subtitleLines = computed(() => {
     color: $color-primary;
     margin-bottom: 8px;
 
-    @media (max-width: 1250px) {
+    @media (max-width: $bp-1250) {
       font-size: 35px;
     }
   }
@@ -68,7 +72,7 @@ const subtitleLines = computed(() => {
     color: $color-text;
     margin-bottom: 87px;
 
-    p {
+    .subtitle-line {
       margin-bottom: 35px;
     }
 
@@ -77,21 +81,13 @@ const subtitleLines = computed(() => {
       font-weight: bold;
     }
 
-    @media (max-width: 1250px) {
+    @media (max-width: $bp-1250) {
       font-size: 18px;
       margin-bottom: 25px;
 
-      p {
+      .subtitle-line {
         margin-bottom: 20px;
       }
-    }
-  }
-
-  .crossed-flags-img {
-    @media (max-width: 1250px) {
-      width: 50%;
-      height: auto;
-      margin-left: 0;
     }
   }
 }

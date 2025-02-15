@@ -155,8 +155,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .customers {
     display: flex;
 
@@ -177,7 +175,7 @@ export default {
         color: $color-secondary;
         margin-bottom: 24px;
 
-        @media (max-width: 1186px) {
+        @media (max-width: $bp-1186) {
             font-size: 25px;
         }
     }
@@ -190,12 +188,12 @@ export default {
         margin-bottom: 48px;
         max-width: 550px;
 
-        @media (max-width: 1186px) {
+        @media (max-width: $bp-1186) {
             font-size: 14px;
             margin-bottom: 0;
         }
 
-        @media (max-width: 780px) {
+        @media (max-width: $bp-780) {
             margin-left: 0;
         }
     }
@@ -248,7 +246,7 @@ export default {
     -webkit-user-select: none;
     -ms-user-select: none;
 
-    @media (max-width: 575px) {
+    @media (max-width: $bp-575) {
         max-width: 200px;
         padding: 15px;
     }
@@ -259,7 +257,7 @@ export default {
         object-fit: cover;
         margin-right: 20px;
 
-        @media (max-width: 575px) {
+        @media (max-width: $bp-575) {
             width: 35px;
             height: 35px;
         }
@@ -276,7 +274,7 @@ export default {
             line-height: 1.6;
             color: $color-secondary;
 
-            @media (max-width: 575px) {
+            @media (max-width: $bp-575) {
                 font-size: 16px;
             }
         }
@@ -287,7 +285,7 @@ export default {
             line-height: 2.1;
             color: $color-text;
 
-            @media (max-width: 575px) {
+            @media (max-width: $bp-575) {
                 font-size: 12px;
             }
         }
@@ -296,11 +294,11 @@ export default {
     .card-text {
         font-size: 16px;
         font-weight: 400;
-        color: $color-dark;
+        color: $color-bg-base;
         line-height: 1.8;
         margin-top: 8px;
 
-        @media (max-width: 575px) {
+        @media (max-width: $bp-575) {
             font-size: 14px;
         }
     }
@@ -317,7 +315,7 @@ export default {
     border-radius: 45px;
     overflow: hidden;
 
-    @media (max-width: 780px) {
+    @media (max-width: $bp-780) {
         bottom: -55px;
     }
 

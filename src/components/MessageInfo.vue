@@ -21,8 +21,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .message-info {
     margin-bottom: -100px;
     z-index: 2;
@@ -36,7 +34,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         box-shadow: $color-shadow 5px 5px 5px -5px;
-        border-radius: 10px;
+        border-radius: $radius-base;
         max-width: 1140px;
 
         &::before {
@@ -48,7 +46,7 @@ export default {
             bottom: -33px;
             background-color: $color-secondary;
             filter: blur(50px);
-            border-radius: 10px;
+            border-radius: $radius-base;
             z-index: -1;
             opacity: 0.1;
             pointer-events: none;
@@ -102,7 +100,7 @@ export default {
         }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: $bp-900) {
         .message-info-container {
             display: flex;
             flex-wrap: wrap;

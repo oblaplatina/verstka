@@ -94,8 +94,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-
 .footer {
   background-color: transparent;
   padding: 179px 0 104px;
@@ -110,7 +108,7 @@ export default {
     right: 50%;
     width: 100vw;
     height: 100%;
-    background-color: $color-light-gray;
+    background-color: $color-bg-light;
     transform: translateX(-50%);
     z-index: -1;
   }
@@ -140,8 +138,6 @@ export default {
           color: $color-primary;
           font-family: "Marko One", serif;
           font-weight: 400;
-          font-style: normal;
-          line-height: 1.5;
           text-transform: uppercase;
         }
       }
@@ -150,7 +146,6 @@ export default {
         color: $color-footer-description;
         font-size: 18px;
         line-height: 1.6;
-        font-weight: 400;
         margin-bottom: 29px;
         margin-right: 185px;
         max-width: 390px;
@@ -241,7 +236,7 @@ export default {
     }
   }
 
-  @media (max-width: 1060px) {
+  @media (max-width: $bp-1060) {
     .footer-container {
       .footer-left {
         .footer-description {
@@ -255,12 +250,14 @@ export default {
       }
 
       .footer-links {
-        .footer-column .footer-title {
-          font-size: 16px;
-        }
+        .footer-column {
+          .footer-title {
+            font-size: 16px;
+          }
 
-        .footer-column .footer-link {
-          font-size: 14px;
+          .footer-link {
+            font-size: 14px;
+          }
         }
 
         .footer-column-company {
@@ -278,7 +275,7 @@ export default {
     }
   }
 
-  @media (max-width: 830px) {
+  @media (max-width: $bp-830) {
     .footer-container {
       .footer-links {
         display: block;
@@ -311,7 +308,7 @@ export default {
     }
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: $bp-430) {
     padding-bottom: 50px;
 
     .footer-container {
