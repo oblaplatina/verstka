@@ -53,8 +53,7 @@ export default {
         }
 
         .message-info-img {
-            margin-left: 67px;
-            margin-right: 62px;
+            margin: 0 62px 0 67px;
         }
 
         .message-info-inner {
@@ -67,9 +66,7 @@ export default {
                 font-weight: 500;
                 line-height: 1.3;
                 color: $color-secondary;
-                margin-bottom: 20px;
-                margin-top: 47px;
-                margin-right: 148px;
+                margin: 47px 148px 20px 0;
             }
 
             .message-info-subtitle {
@@ -82,7 +79,7 @@ export default {
         }
     }
 
-    @media (max-width: 1186px) {
+    @media (max-width: $bp-1186) {
         .message-info-container {
             .message-info-inner {
                 flex: -1;
@@ -110,8 +107,7 @@ export default {
 
             .message-info-img {
                 flex: 0 0 auto;
-                margin-right: 20px;
-                margin-left: 0;
+                margin: 0 20px 0 0;
             }
 
             .message-info-inner {
@@ -131,14 +127,13 @@ export default {
         }
     }
 
-    @media (max-width: 438px) {
+    @media (max-width: $bp-438) {
         .message-info-container {
             .message-info-inner {
                 text-align: center;
 
                 .message-info-title {
-                    margin-top: 10px;
-                    margin-bottom: 10px;
+                    margin: 10px 0;
                 }
 
                 .message-info-img {

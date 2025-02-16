@@ -28,8 +28,8 @@ function handleClick(event) {
 
 .btn--primary {
     display: inline-block;
-    background-color: #8CC5F9;
-    color: #FFFFFF;
+    background-color: $color-primary;
+    color: $color-white;
     font-size: 16px;
     line-height: 1.4;
     padding: 17px 80px;
@@ -43,34 +43,34 @@ function handleClick(event) {
         margin-right: 0;
         margin-bottom: 20px;
     }
-}
 
-.btn--primary:hover {
-    background-color: #878ABC;
-}
+    &:hover {
+        background-color: $color-btn-hover;
+    }
 
-.btn--primary::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 25.3px;
-    left: 19.09px;
-    right: 19.09px;
-    bottom: -25.3px;
-    background-color: #8CC5F9;
-    opacity: 0.22;
-    border-radius: $radius-base;
-    filter: blur(22px);
-    z-index: -1;
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 25.3px;
+        left: 19.09px;
+        right: 19.09px;
+        bottom: -25.3px;
+        background-color: $color-primary;
+        opacity: 0.22;
+        border-radius: $radius-base;
+        filter: blur(22px);
+        z-index: -1;
+    }
 }
 
 .btn--product {
     background-color: transparent;
-    color: #8CC5F9;
+    color: $color-primary;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.8;
-    border: 2px solid rgba(140, 197, 249, 1);
+    border: 2px solid $color-primary;
     border-radius: $radius-large;
     padding: 10px 30px;
 
@@ -85,11 +85,11 @@ function handleClick(event) {
     @media (max-width: $bp-470) {
         font-size: 14px;
     }
-}
 
-.btn--product:hover {
-    background: rgba(135, 138, 188, 1);
-    border-color: rgba(135, 138, 188, 1);
-    color: $color-white;
+    &:hover {
+        background: $color-btn-hover;
+        border-color: $color-btn-hover;
+        color: $color-white;
+    }
 }
 </style>

@@ -34,18 +34,19 @@ export default {
     left: 0;
     z-index: 100;
     box-sizing: border-box;
+    transition: opacity 0.5s ease, height 0.5s ease;
 
     &.notification-bar-hidden {
         opacity: 0;
         height: 0;
         overflow: hidden;
         padding: 0;
-        transition: opacity 0.5s ease, height 0.5s ease;
+        pointer-events: none;
     }
 
     .notification-text {
         margin: 0 auto;
-        color: #f5fafe;
+        color: $color-white;
         font-size: 18px;
         padding: 21px;
 
@@ -58,6 +59,11 @@ export default {
         padding-right: 22px;
         cursor: pointer;
         position: relative;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 }
 </style>

@@ -230,7 +230,7 @@ export default {
 }
 
 .card {
-    border-radius: 10px;
+    border-radius: $radius-base;
     border: 2px solid $color-primary;
     padding: 30px;
     max-width: 400px;
@@ -311,8 +311,8 @@ export default {
     transform: translateX(-50%);
     width: 200px;
     height: 11px;
-    background-color: rgba(245, 250, 254, 1);
-    border-radius: 45px;
+    background-color: $color-bg-light;
+    border-radius: $radius-large;
     overflow: hidden;
 
     @media (max-width: $bp-780) {
@@ -323,7 +323,7 @@ export default {
         height: 100%;
         width: 45px;
         background-color: $color-primary;
-        border-radius: 45px;
+        border-radius: $radius-large;
         position: relative;
     }
 }

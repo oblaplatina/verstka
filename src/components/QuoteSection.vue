@@ -33,7 +33,7 @@ export default {
         transform: translate(-50%);
         width: 100vw;
         height: 100%;
-        background: #fbfbfb;
+        background: $color-bg-light;
         z-index: -1;
     }
 
@@ -42,8 +42,7 @@ export default {
         position: relative;
 
         .quote-icon {
-            margin-top: 80px;
-            margin-bottom: 43px;
+            margin: 80px auto 43px;
 
             img {
                 display: block;
@@ -55,11 +54,10 @@ export default {
             font-style: italic;
             font-weight: 400;
             line-height: 1.2;
-            text-align: left;
-            color: #4f4f4f;
-            margin-bottom: 45px;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: center;
+            color: $color-text;
+            margin: 0 auto 45px;
+            max-width: 800px;
         }
 
         .quote-author {
@@ -79,7 +77,8 @@ export default {
         .quote-content {
             .quote-text {
                 font-size: 26px;
-                margin-left: 10px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }

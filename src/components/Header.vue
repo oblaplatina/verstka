@@ -206,7 +206,7 @@ export default {
         margin-top: 79px;
         line-height: 1.9;
         font-size: 16px;
-        color: #4f4f4f;
+        color: $color-text;
 
         .lang-select {
             cursor: pointer;
@@ -228,12 +228,12 @@ export default {
             position: absolute;
             margin-top: 5px;
             background-color: $color-white;
-            box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
+            box-shadow: 4px 4px 16px $color-shadow;
+            border-radius: $radius-base;
             align-items: center;
 
             a {
-                color: #333;
+                color: $color-secondary;
                 text-decoration: none;
                 display: flex;
                 align-items: center;

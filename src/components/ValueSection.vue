@@ -71,11 +71,11 @@ export default {
         color: $color-text;
         margin-bottom: 121px;
 
-        @media (max-width: 1005px) {
+        @media (max-width: $bp-1005) {
             font-size: 30px;
         }
 
-        @media (max-width: 645px) {
+        @media (max-width: $bp-645) {
             font-size: 24px;
             margin-bottom: 55px;
         }
@@ -85,7 +85,7 @@ export default {
         display: flex;
         margin-bottom: 144px;
 
-        @media (max-width: 645px) {
+        @media (max-width: $bp-645) {
             margin-bottom: 25px;
             margin-left: -50px;
         }
@@ -96,7 +96,7 @@ export default {
             align-items: flex-start;
             width: 100%;
 
-            @media (max-width: 645px) {
+            @media (max-width: $bp-645) {
                 gap: 30px;
             }
 
@@ -107,7 +107,7 @@ export default {
                 text-align: right;
 
                 img {
-                    @media (max-width: 645px) {
+                    @media (max-width: $bp-645) {
                         max-width: 40px;
                     }
                 }
@@ -126,11 +126,11 @@ export default {
                     color: $color-primary;
                     margin-bottom: 46px;
 
-                    @media (max-width: 1465px) {
+                    @media (max-width: $bp-1465) {
                         font-size: 35px;
                     }
 
-                    @media (max-width: 645px) {
+                    @media (max-width: $bp-645) {
                         font-size: 22px;
                         margin-bottom: 10px;
                     }
@@ -141,11 +141,11 @@ export default {
                     font-weight: 400;
                     color: $color-text;
 
-                    @media (max-width: 1465px) {
+                    @media (max-width: $bp-1465) {
                         font-size: 25px;
                     }
 
-                    @media (max-width: 645px) {
+                    @media (max-width: $bp-645) {
                         font-size: 12px;
                     }
                 }
@@ -153,12 +153,12 @@ export default {
         }
     }
 
-    @media (max-width: 1465px) {
+    @media (max-width: $bp-1465) {
         width: 80%;
         margin-right: 0;
     }
 
-    @media (max-width: 645px) {
+    @media (max-width: $bp-645) {
         width: 100%;
         margin-bottom: 130px;
     }

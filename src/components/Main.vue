@@ -32,7 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 .main-content {
-    margin-bottom: 157.55px;
+    margin-bottom: 157px;
 
     .main-top {
         display: flex;
@@ -112,8 +112,7 @@ export default {
 
             .network-img {
                 width: 100%;
-                margin: 0 auto;
-                margin-top: 50px;
+                margin: 50px auto 0;
             }
 
             .text-container {
@@ -127,10 +126,6 @@ export default {
                     font-size: 22px;
                     margin-bottom: 35px;
                 }
-            }
-
-            .main-content {
-                margin-bottom: 85px;
             }
         }
 

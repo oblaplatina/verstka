@@ -66,29 +66,29 @@ const subtitleLines = computed(() => {
   }
 
   .about-us-subtitle {
+    margin-bottom: 87px;
+
+    @media (max-width: $bp-1250) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .subtitle-line {
     font-size: 22px;
     font-weight: 400;
     line-height: 1.37;
     color: $color-text;
-    margin-bottom: 87px;
-
-    .subtitle-line {
-      margin-bottom: 35px;
-    }
-
-    .highlight {
-      color: $color-primary;
-      font-weight: bold;
-    }
+    margin-bottom: 35px;
 
     @media (max-width: $bp-1250) {
       font-size: 18px;
-      margin-bottom: 25px;
-
-      .subtitle-line {
-        margin-bottom: 20px;
-      }
+      margin-bottom: 20px;
     }
+  }
+
+  .highlight {
+    color: $color-primary;
+    font-weight: bold;
   }
 }
 </style>

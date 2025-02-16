@@ -5,7 +5,7 @@
             <div class="jobs-info-inner">
                 <h2 class="jobs-info-title">{{ $t('about.jobsInfo.title') }}</h2>
                 <div class="jobs-info-subtitle">
-                    <p>{{ $t('about.jobsInfo.subtitle') }}</p>
+                    <p class="jobs-info-text">{{ $t('about.jobsInfo.subtitle') }}</p>
                 </div>
             </div>
             <div class="jobs-button-shadow">
@@ -33,7 +33,7 @@ export default {
         margin: 0 auto;
         justify-content: space-between;
         align-items: center;
-        box-shadow: $color-shadow 5px 5px 5px -5px;
+        box-shadow: 5px 5px 5px -5px $color-shadow;
         border-radius: $radius-base;
         max-width: 1140px;
 
@@ -107,21 +107,30 @@ export default {
     }
 
     &-subtitle {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.8;
-        color: $color-text;
         margin-bottom: 47px;
         margin-right: 148px;
 
         @media (max-width: $bp-1186) {
-            font-size: 14px;
             margin-right: 30px;
         }
 
         @media (max-width: $bp-900) {
-            font-size: 12px;
             margin-bottom: 25px;
+        }
+    }
+
+    &-text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.8;
+        color: $color-text;
+
+        @media (max-width: $bp-1186) {
+            font-size: 14px;
+        }
+
+        @media (max-width: $bp-900) {
+            font-size: 12px;
         }
     }
 

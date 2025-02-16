@@ -39,7 +39,7 @@ export default {
             margin-left: 71px;
             background-color: $color-white;
             box-shadow: $color-shadow 0px 5px 5px -5px;
-            border-radius: 10px;
+            border-radius: $radius-base;
             z-index: 1;
 
             &::before {
@@ -70,7 +70,7 @@ export default {
                     transform: translateY(-50%);
                     width: 2px;
                     height: 160%;
-                    background-color: #eeeff2;
+                    background-color: $color-bg-light;
                 }
 
                 p {

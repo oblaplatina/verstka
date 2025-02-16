@@ -40,7 +40,7 @@ export default {
         left: 0;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: -81px;
             left: 0;

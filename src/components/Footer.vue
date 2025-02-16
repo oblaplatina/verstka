@@ -164,15 +164,15 @@ export default {
           height: 24px;
           background-color: $color-primary;
           border-radius: 50%;
-          box-shadow: 0 13px 18px rgba(17, 19, 35, 0.08);
+          box-shadow: 0 13px 18px $color-shadow;
         }
       }
 
-      p {
+      .footer-copyright {
         font-size: 16px;
         font-weight: 400;
         line-height: 1.6;
-        color: #afb5c0;
+        color: $color-footer-description;
       }
     }
 
@@ -244,7 +244,7 @@ export default {
           margin-right: 90px;
         }
 
-        p {
+        .footer-copyright {
           font-size: 14px;
         }
       }
@@ -329,7 +329,7 @@ export default {
           margin-left: 5px;
         }
 
-        p {
+        .footer-copyright {
           font-size: 12px;
         }
       }

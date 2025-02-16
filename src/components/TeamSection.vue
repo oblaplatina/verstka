@@ -266,6 +266,7 @@ export default {
 }
 
 .team-nav-title {
+    align-items: center;
     display: flex;
     justify-content: center;
     margin-bottom: 81px;
@@ -464,13 +465,11 @@ export default {
     flex-wrap: wrap;
 }
 
-.modal-image {
-    img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-        flex-shrink: 0;
-    }
+.modal-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    flex-shrink: 0;
 }
 
 .modal-info {
@@ -504,13 +503,11 @@ export default {
     margin-top: 21px;
 }
 
-.social-icon {
-    img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-bottom: 60px;
-    }
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 60px;
 }
 
 .modal-quote {
@@ -519,10 +516,10 @@ export default {
     font-weight: 300;
     line-height: 37.92px;
     text-align: left;
-    color: #878abc;
+    color: $color-btn-hover;
 }
 
-@media (max-width: $bp-1658) {
+@media (max-width: 1658px) {
     .modal-title {
         font-size: 35px;
     }
@@ -558,7 +555,7 @@ export default {
     }
 }
 
-@media (max-width: $bp-1100) {
+@media (max-width: 1100px) {
     .modal-body {
         flex-direction: column;
         align-items: center;
@@ -569,7 +566,7 @@ export default {
     }
 }
 
-@media (max-width: $bp-660) {
+@media (max-width: 660px) {
     .modal-body {
         gap: 10px;
     }
