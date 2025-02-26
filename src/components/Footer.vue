@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="footer-brand-logo">
-          <router-link to="/" class="footer-logo">
+          <router-link :to="ROUTES.HOME" class="footer-logo">
             <img src="@/assets/images/logo.svg" alt="footer logo" />
           </router-link>
           <h3 class="footer-brand-name">{{ $t('common.footer.brandName') }}</h3>
@@ -34,7 +34,7 @@
           </h3>
           <ul class="footer-list" :class="{ 'is-hidden': isMobile && !isOpen[index] }">
             <li v-for="(link, linkIndex) in column.links" :key="linkIndex">
-              <router-link v-if="link.isRouter" :to="link.href" class="footer-link">
+              <router-link v-if="link.isRouter" :to="ROUTES[link.href]" class="footer-link">
                 {{ link.text }}
               </router-link>
               <a v-else :href="link.href" class="footer-link" target="_blank">
@@ -52,6 +52,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { defineProps } from 'vue'
 import langArrow from '@/assets/images/lang-arrow.svg'
+import { ROUTES } from '@/router/routes'
 
 const props = defineProps({
   links: {

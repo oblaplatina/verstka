@@ -2,7 +2,7 @@
     <div class="header">
         <div class="container">
             <div class="header-inner">
-                <router-link to="/" class="logo">
+                <router-link :to="ROUTES.HOME" class="logo">
                     <img src="@/assets/images/logo.svg" alt="Logo" />
                 </router-link>
                 <h3 class="brand-name">{{ $t('common.header.brandName') }}</h3>
@@ -10,7 +10,7 @@
                     <ul class="menu-list">
                         <li v-for="(item, index) in menuItems" :key="index" :class="{ active: isActive(item.path) }"
                             class="menu-link">
-                            <router-link :to="item.path">
+                            <router-link :to="ROUTES[item.path]">
                                 {{ $t(`common.header.menuItems.${item.label}`) }}
                             </router-link>
                         </li>
@@ -41,6 +41,7 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
+import { ROUTES } from '@/router/routes'
 import flagEn from '@/assets/images/flag-en.svg'
 import flagEs from '@/assets/images/flag-es.svg'
 import flagDe from '@/assets/images/flag-de.svg'
@@ -51,11 +52,11 @@ const route = useRoute()
 const router = useRouter()
 
 const menuItems = [
-    { label: 'about', path: '/about' },
-    { label: 'products', path: '/products' },
-    { label: 'work', path: '/work' },
-    { label: 'blog', path: '/blog' },
-    { label: 'contact', path: '/contact' }
+    { label: 'about', path: 'ABOUT' },
+    { label: 'products', path: 'HOME' },
+    { label: 'work', path: 'HOME' },
+    { label: 'blog', path: 'HOME' },
+    { label: 'contact', path: 'HOME' }
 ]
 
 const languages = [
