@@ -80,7 +80,6 @@
                             <div class="modal-socials">
                                 <a v-for="(url, platform) in selectedMember.social" :key="platform" :href="url"
                                     target="_blank" class="social-icon">
-                                    <!-- Иконка соцсети -->
                                     <img :src="socialIcons[platform]" :alt="platform" />
                                 </a>
                             </div>
@@ -97,157 +96,153 @@
     </section>
 </template>
 
-<script>
-export default {
-    name: 'TeamSection',
-    data() {
-        return {
-            activeTab: 'Management',
-            modalVisible: false,
-            selectedMember: null,
+<script setup>
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-            // Пагинация
-            currentPage: 1,
-            membersPerPage: 8,
+import vickyRuss from '@/assets/images/vicky-russ.jpg'
+import rotMitt from '@/assets/images/rot-mitt.jpg'
+import rotMittBack from '@/assets/images/rot-mitt-back.jpg'
+import rotMittFull from '@/assets/images/rot-mitt-full-size.webp'
+import lauraHanz from '@/assets/images/laura-hanz.jpg'
+import lauraHanzBack from '@/assets/images/laura-hanz-back.jpg'
+import elenaWood from '@/assets/images/elena-wood.jpg'
+import amanNais from '@/assets/images/aman-nais.jpg'
+import franciscaLemon from '@/assets/images/francisca-lemon.jpg'
+import reineTais from '@/assets/images/reine-tais.jpg'
+import olgurMonz from '@/assets/images/olgur-monz.jpg'
+import mediumIcon from '@/assets/images/medium-modal-icon.svg'
+import instagramIcon from '@/assets/images/instagram-modal-icon.svg'
+import linkedinIcon from '@/assets/images/linkedin-modal-icon.svg'
 
-            // Массив с участниками: у каждого есть:
-            // - id
-            // - name (НЕ переводим)
-            // - slug (ключ в JSON)
-            // - image, backImage, fullImage (картинки - храним в коде)
-            teamMembers: {
-                Management: [
-                    {
-                        id: 1,
-                        name: "Vicky Russ",
-                        slug: "vicky-russ",
-                        image: require("@/assets/images/vicky-russ.jpg"),
-                        backImage: null,
-                        fullImage: null,
-                        social: {
-                            medium: "https://medium.com/vicky-russ",
-                            instagram: "https://instagram.com/vicky.russ",
-                            linkedin: "https://linkedin.com/in/vicky-russ"
-                        }
-                    },
-                    {
-                        id: 2,
-                        name: "Rot Mitt",
-                        slug: "rot-mitt",
-                        image: require("@/assets/images/rot-mitt.jpg"),
-                        backImage: require("@/assets/images/rot-mitt-back.jpg"),
-                        fullImage: require("@/assets/images/rot-mitt-full-size.webp"),
-                        social: {
-                            medium: "https://medium.com/vicky-russ",
-                            instagram: "https://instagram.com/vicky.russ",
-                            linkedin: "https://linkedin.com/in/vicky-russ"
-                        }
-                    },
-                    {
-                        id: 3,
-                        name: "Laura Hanz",
-                        slug: "laura-hanz",
-                        image: require("@/assets/images/laura-hanz.jpg"),
-                        backImage: require("@/assets/images/laura-hanz-back.jpg"),
-                        fullImage: null
-                    },
-                    {
-                        id: 4,
-                        name: "Elena Wood",
-                        slug: "elena-wood",
-                        image: require("@/assets/images/elena-wood.jpg"),
-                        backImage: null,
-                        fullImage: null
-                    },
-                    {
-                        id: 5,
-                        name: "Aman Nais",
-                        slug: "aman-nais",
-                        image: require("@/assets/images/aman-nais.jpg")
-                    },
-                    {
-                        id: 6,
-                        name: "Francisca Lemon",
-                        slug: "francisca-lemon",
-                        image: require("@/assets/images/francisca-lemon.jpg")
-                    },
-                    {
-                        id: 7,
-                        name: "Reine Tais",
-                        slug: "reine-tais",
-                        image: require("@/assets/images/reine-tais.jpg")
-                    },
-                    {
-                        id: 8,
-                        name: "Olgur Monz",
-                        slug: "olgur-monz",
-                        image: require("@/assets/images/olgur-monz.jpg")
-                    }
-                ],
-                Product: [],
-                Marketing: [],
-                Design: [],
-                Development: []
-            },
+const { t } = useI18n()
+const { locale, messages } = useI18n()
 
-            // Иконки соцсетей (можете тоже вынести в JSON, если нужно переводить или менять)
-            socialIcons: {
-                medium: require("@/assets/images/medium-modal-icon.svg"),
-                instagram: require("@/assets/images/instagram-modal-icon.svg"),
-                linkedin: require("@/assets/images/linkedin-modal-icon.svg")
+const activeTab = ref('Management')
+const modalVisible = ref(false)
+const selectedMember = ref(null)
+const currentPage = ref(1)
+const membersPerPage = 8
+
+const teamMembers = {
+    Management: [
+        {
+            id: 1,
+            name: "Vicky Russ",
+            slug: "vicky-russ",
+            image: vickyRuss,
+            backImage: null,
+            fullImage: null,
+            social: {
+                medium: "https://medium.com/vicky-russ",
+                instagram: "https://instagram.com/vicky.russ",
+                linkedin: "https://linkedin.com/in/vicky-russ"
             }
-        };
-    },
-    computed: {
-        tabsFromI18n() {
-            const tabs = this.$t('about.team.tabs');
-            return Array.isArray(tabs) ? tabs : [];
         },
-        visibleMembers() {
-            const currentArray = this.teamMembers[this.activeTab] || [];
-            return currentArray.slice(0, this.membersPerPage * this.currentPage);
+        {
+            id: 2,
+            name: "Rot Mitt",
+            slug: "rot-mitt",
+            image: rotMitt,
+            backImage: rotMittBack,
+            fullImage: rotMittFull,
+            social: {
+                medium: "https://medium.com/vicky-russ",
+                instagram: "https://instagram.com/vicky.russ",
+                linkedin: "https://linkedin.com/in/vicky-russ"
+            }
         },
-        hasMoreMembers() {
-            const total = (this.teamMembers[this.activeTab] || []).length;
-            return this.visibleMembers.length < total;
+        {
+            id: 3,
+            name: "Laura Hanz",
+            slug: "laura-hanz",
+            image: lauraHanz,
+            backImage: lauraHanzBack,
+            fullImage: null
+        },
+        {
+            id: 4,
+            name: "Elena Wood",
+            slug: "elena-wood",
+            image: elenaWood,
+            backImage: null,
+            fullImage: null
+        },
+        {
+            id: 5,
+            name: "Aman Nais",
+            slug: "aman-nais",
+            image: amanNais
+        },
+        {
+            id: 6,
+            name: "Francisca Lemon",
+            slug: "francisca-lemon",
+            image: franciscaLemon
+        },
+        {
+            id: 7,
+            name: "Reine Tais",
+            slug: "reine-tais",
+            image: reineTais
+        },
+        {
+            id: 8,
+            name: "Olgur Monz",
+            slug: "olgur-monz",
+            image: olgurMonz
         }
-    },
-    methods: {
-        selectTeam(tab) {
-            this.activeTab = tab;
-            this.currentPage = 1;
-        },
-        loadMoreCards() {
-            this.currentPage++;
-        },
-        openModal(member) {
-            this.selectedMember = member;
-            this.modalVisible = true;
-        },
-        closeModal() {
-            this.modalVisible = false;
-            this.selectedMember = null;
-        },
+    ],
+    Product: [],
+    Marketing: [],
+    Design: [],
+    Development: []
+}
 
-        // Утилита: получить строковое поле из i18n (title, description1, quote...)
-        memberField(slug, field) {
-            // Пример ключа: "about.team.members.rot-mitt.title"
-            const key = `about.team.members.${slug}.${field}`;
-            const val = this.$t(key);
-            // Если i18n не нашел перевода, вернёт сам ключ:
-            return (val === key) ? null : val;
-        },
+const socialIcons = {
+    medium: mediumIcon,
+    instagram: instagramIcon,
+    linkedin: linkedinIcon
+}
 
-        // // Получаем объект social
-        // memberSocial(slug) {
-        //     const key = `about.team.members.${slug}.social`
-        //     const val = this.$t(key)
-        //     if (typeof val === 'string') {
-        //         return {}
-        //     }
-        //     return val || {}
-        // }
-    }
+const tabsFromI18n = computed(() => {
+    const tabs = t('about.team.tabs')
+    return Array.isArray(tabs) ? tabs : []
+})
+
+const visibleMembers = computed(() => {
+    const currentArray = teamMembers[activeTab.value] || []
+    return currentArray.slice(0, membersPerPage * currentPage.value)
+})
+
+const hasMoreMembers = computed(() => {
+    const total = (teamMembers[activeTab.value] || []).length
+    return visibleMembers.value.length < total
+})
+
+const selectTeam = (tab) => {
+    activeTab.value = tab
+    currentPage.value = 1
+}
+
+const loadMoreCards = () => {
+    currentPage.value++
+}
+
+const openModal = (member) => {
+    selectedMember.value = member
+    modalVisible.value = true
+}
+
+const closeModal = () => {
+    modalVisible.value = false
+    selectedMember.value = null
+}
+
+const memberField = (slug, field) => {
+    const key = `about.team.members.${slug}.${field}`
+    const val = t(key)
+    return (val === key) ? null : val
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <section class="info">
         <div class="container-info">
-            <img src="@/assets/images/campaign.png" alt="" class="campaign-img">
+            <img src="@/assets/images/campaign.png" alt="" class="campaign-img" />
             <div class="info-inner">
                 <h2 class="section-info-title">
                     {{ $t('home.info.title') }}
@@ -22,15 +22,16 @@
     </section>
 </template>
 
-<script>
-export default {
-    computed: {
-        infoItems() {
-            const items = this.$i18n.messages[this.$i18n.locale].home.info.list
-            return items || []
-        }
-    }
-}
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale, messages } = useI18n()
+
+const infoItems = computed(() => {
+    const items = messages.value[locale.value].home.info.list
+    return items || []
+})
 </script>
 <style>
 .info {

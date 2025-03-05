@@ -18,13 +18,11 @@
         </div>
     </section>
 </template>
-<script>
-export default {
-    name: 'Stat',
-}
+<script setup>
+
 </script>
 <style>
-    .stat-container {
+.stat-container {
     position: relative;
     margin-bottom: 137.5px;
 }
@@ -66,8 +64,8 @@ export default {
 .stat-item:not(:last-child)::after {
     content: "";
     position: absolute;
-    top: 50%; 
-    right: -15px; 
+    top: 50%;
+    right: -15px;
     transform: translateY(-50%);
     width: 2px;
     height: 160%;
@@ -96,6 +94,7 @@ export default {
     .stat-item {
         margin-left: 50px;
     }
+
     .stat-content::before {
         left: 40px;
     }
@@ -106,7 +105,7 @@ export default {
         gap: 15px;
         margin-right: 0;
     }
-    
+
     .stat-item p {
         font-size: 16px;
     }
@@ -133,7 +132,7 @@ export default {
 }
 
 @media (max-width: 630px) {
-    
+
 
     .stat-item img {
         width: 35px;
@@ -157,5 +156,4 @@ export default {
         right: -20%;
     }
 }
-
 </style>

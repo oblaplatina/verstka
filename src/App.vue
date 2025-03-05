@@ -1,6 +1,6 @@
 <template>
-  
-  <router-view/>
+
+  <router-view />
 </template>
 
 <script setup>
@@ -9,10 +9,10 @@ import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
 
-function updateHtmlClass(currentLocale) {
+const updateHtmlClass = (currentLocale) => {
   console.log('updateHtmlClass called with locale:', currentLocale)
   document.documentElement.classList.remove('locale-de', 'locale-es')
-  
+
   if (currentLocale === 'de') {
     document.documentElement.classList.add('locale-de')
   } else if (currentLocale === 'es') {
@@ -37,7 +37,9 @@ html {
   overflow-x: hidden;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -63,7 +65,8 @@ ul {
   font-size: 1rem;
 }
 
-:root.locale-de, :root.locale-es {
+:root.locale-de,
+:root.locale-es {
   font-size: 0.8rem;
   word-wrap: break-word;
 }
