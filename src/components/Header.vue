@@ -20,18 +20,18 @@
 
                 <div class="menu-lang" @mouseenter="showDropdown" @mouseleave="hideDropdown">
                     <div class="lang-select">
-                        <a href="#" class="flag-icon">
+                        <button class="flag-icon">
                             {{ selectedLang.code }}
                             <img :src="selectedLang.flag" :alt="selectedLang.code" />
-                        </a>
+                        </button>
                         <img src="@/assets/images/lang-arrow.svg" alt="" class="arrow-icon" />
                     </div>
                     <div class="lang-dropdown" v-if="isDropdownOpen">
-                        <a href="#" v-for="lang in otherLanguages" :key="lang.code" class="lang-option"
-                            @click.prevent="selectLanguage(lang)">
+                        <button v-for="lang in otherLanguages" :key="lang.code" class="lang-option"
+                            @click="selectLanguage(lang)">
                             {{ lang.code }}
                             <img :src="lang.flag" :alt="lang.code" />
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,10 @@ const languages = [
 ]
 
 const findCurrentLang = (currentLangCode) => {
-    return languages.find(lang => lang.code.toLowerCase() === currentLangCode)
+    const storedLocale = localStorage.getItem('locale')
+    const langCode = storedLocale ? storedLocale : currentLangCode
+    const found = languages.find(lang => lang.code.toLowerCase() === langCode)
+    return found ? found : { code: 'En', flag: flagEn }
 }
 
 const selectedLang = ref(findCurrentLang(locale.value) || { code: 'En', flag: flagEn })
@@ -201,7 +204,7 @@ onMounted(() => {
     align-items: center;
 }
 
-.lang-dropdown a {
+.lang-dropdown button {
     color: #333;
     text-decoration: none;
     display: flex;
