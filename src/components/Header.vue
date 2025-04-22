@@ -232,7 +232,7 @@ export default {
             border-radius: $radius-base;
             align-items: center;
 
-            a {
+            button {
                 color: $color-secondary;
                 text-decoration: none;
                 display: flex;
