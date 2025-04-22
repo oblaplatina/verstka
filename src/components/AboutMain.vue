@@ -2,10 +2,7 @@
   <main class="main-content">
     <section class="about-us-container">
       <div class="about-us-inner">
-        <!-- Локализованный заголовок -->
         <h1 class="about-us-title">{{ $t('about.aboutMain.title') }}</h1>
-
-        <!-- Вывод массива строк напрямую -->
         <div class="about-us-subtitle">
           <p class="subtitle-line" v-for="(line, index) in subtitleLines" :key="index" v-html="line">
           </p>

@@ -1,18 +1,28 @@
 <template>
     <div class="button-shadow">
-        <a href="#" class="btn" @click.prevent="handleClick">
-            <slot>{{ text }}</slot>
+        <a href="#" :class="['app-button', variantClass]" @click.prevent="handleClick">
+            {{ text }}
         </a>
     </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const emit = defineEmits(['click'])
 const props = defineProps({
     text: {
         type: String,
         default: ''
+    },
+    variant: {
+        type: String,
+        default: 'primary'
     }
+})
+
+const variantClass = computed(() => {
+    return props.variant === 'product' ? 'btn--product' : 'btn--primary'
 })
 
 function handleClick(event) {
