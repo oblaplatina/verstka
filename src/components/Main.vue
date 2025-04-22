@@ -10,9 +10,7 @@
                         {{ $t('home.main.subtitle.' + index) }}
                     </p>
                 </div>
-                <div class="button-shadow">
-                    <a href="#" class="contact-btn">{{ $t('home.main.button') }}</a>
-                </div>
+                <AppButton :text="$t('home.main.button')" />
             </div>
             <img src="@/assets/images/network.svg" alt="Network Image" class="network-img" />
         </section>
@@ -22,6 +20,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import AppButton from '@/components/AppButton.vue'
 
 const { locale, messages } = useI18n()
 
@@ -68,37 +67,6 @@ const subtitleLines = computed(() => {
     display: inline-block;
 }
 
-.contact-btn {
-    display: inline-block;
-    background-color: #8CC5F9;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 1.4;
-    padding: 17px 80px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 1;
-}
-
-.contact-btn:hover {
-    background-color: #878ABC;
-}
-
-.contact-btn::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 25.3px;
-    left: 19.09px;
-    right: 19.09px;
-    bottom: -25.3px;
-    background-color: #5F7A7E;
-    opacity: 0.22;
-    border-radius: 10px;
-    filter: blur(22px);
-    z-index: -1;
-}
-
 .network-img {
     display: flex;
     margin-right: -18px;
@@ -142,11 +110,6 @@ const subtitleLines = computed(() => {
         font-size: 16px;
         margin-bottom: 35px;
     }
-
-    .contact-btn {
-        font-size: 14px;
-        padding: 11px 50px;
-    }
 }
 
 @media (max-width: 840px) {
@@ -172,11 +135,6 @@ const subtitleLines = computed(() => {
     .main-subtitle {
         font-size: 22px;
         margin-bottom: 35px;
-    }
-
-    .contact-btn {
-        font-size: 16px;
-        padding: 17px 80px;
     }
 
     .text-container {
