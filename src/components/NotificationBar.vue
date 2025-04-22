@@ -15,9 +15,10 @@ const closeNotificationBar = () => {
     visible.value = false
 }
 </script>
-<style>
+
+<style lang="scss" scoped>
 .notification-bar {
-    background-color: #08090A;
+    background-color: $color-bg-base;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -28,32 +29,36 @@ const closeNotificationBar = () => {
     left: 0;
     z-index: 100;
     box-sizing: border-box;
-}
-
-.notification-bar-hidden {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    padding: 0;
     transition: opacity 0.5s ease, height 0.5s ease;
-}
 
-.notification-text {
-    margin: 0 auto;
-    color: #F5FAFE;
-    font-size: 18px;
-    padding: 21px;
-}
+    &.notification-bar-hidden {
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        pointer-events: none;
+    }
 
-.close-icon {
-    padding-right: 22px;
-    cursor: pointer;
-    position: relative;
-}
-
-@media (max-width: 430px) {
     .notification-text {
-        font-size: 12px;
+        margin: 0 auto;
+        color: $color-white;
+        font-size: 18px;
+        padding: 21px;
+
+        @media (max-width: $bp-430) {
+            font-size: 12px;
+        }
+    }
+
+    .close-icon {
+        padding-right: 22px;
+        cursor: pointer;
+        position: relative;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 }
 </style>

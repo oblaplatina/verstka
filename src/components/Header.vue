@@ -25,8 +25,8 @@
                         <img :src="langArrow" alt="" class="arrow-icon" />
                     </div>
                     <div class="lang-dropdown" v-if="isDropdownOpen">
-                        <button v-for="lang in otherLanguages" :key="lang.code" class="lang-option"
-                            @click="selectLanguage(lang)">
+                        <button href="#" v-for="lang in otherLanguages" :key="lang.code" class="lang-option"
+                            @click.prevent="selectLanguage(lang)">
                             {{ lang.code }}
                             <img :src="lang.flag" :alt="lang.code" />
                         </button>
@@ -112,180 +112,169 @@ onMounted(() => {
     }
 })
 </script>
-<style>
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 85px;
-}
 
-.logo {
-    margin-top: 83px;
-}
-
-.brand-name {
-    margin-top: 81px;
-    font-size: 22px;
-    color: #8CC5F9;
-    font-family: "Marko One", serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin-right: auto;
-    margin-left: 11px;
-}
-
-.menu-list {
-    display: flex;
-    margin-top: 88.62px;
-    gap: 0 43px;
-    font-size: 16px;
-    color: #08090A;
-    margin-right: 255px;
-    margin-left: 159px;
-}
-
-.menu-link:hover {
-    color: #8CC5F9;
-}
-
-.menu-link a {
-    position: relative;
-    text-decoration: none;
-}
-
-.menu-link.active a {
-    color: #8CC5F9;
-}
-
-.menu-link.active a::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #8CC5F9;
-}
-
-.menu-lang {
-    display: inline-block;
-    margin-top: 79px;
-    line-height: 1.9;
-    font-size: 16px;
-    color: #4F4F4F;
-}
-
-.lang-select {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.flag-icon {
-    display: flex;
-    gap: 7px;
-}
-
-.arrow-icon {
-    margin-left: 5px;
-}
-
-.lang-dropdown {
-    display: none;
-    position: absolute;
-    margin-top: 5px;
-    background-color: #FFFFFF;
-    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    align-items: center;
-}
-
-.lang-dropdown button {
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    line-height: 1.2;
-}
-
-.lang-option {
-    display: flex;
-    margin: 15px 15px;
-    justify-content: space-between
-}
-
-.lang-option {
-    display: flex;
-    gap: 5px;
-}
-
-.menu-lang:hover .lang-dropdown {
-    display: block;
-}
-
-@media (max-width: 1235px) {
-    .menu-list {
-        margin-left: auto;
-        margin-right: 0;
-    }
-
+<style lang="scss" scoped>
+.header {
     .header-inner {
-        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 85px;
+
+        @media (max-width: $bp-1235) {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: $bp-430) {
+            justify-content: flex-start;
+        }
     }
 
-    .menu-lang {
-        margin-left: auto;
-    }
-}
+    .logo {
+        margin-top: 83px;
 
-@media (max-width: 900px) {
-    .menu-list {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-}
-
-@media (max-width: 430px) {
-    .menu-lang {
-        margin-left: 15px;
-        font-size: 12px
-    }
-
-    .menu-lang img {
-        width: 15px;
-    }
-
-    .arrow-icon {
-        width: 10px;
-    }
-
-    /* .lang-select {
-        font-size: 12px;
-    }
-
-    .lang-dropdown {
-        font-size: 12px;
-    } */
-
-    .logo img {
-        width: 35px;
+        @media (max-width: $bp-430) {
+            img {
+                width: 35px;
+            }
+        }
     }
 
     .brand-name {
-        margin-left: 0;
+        margin-top: 81px;
+        font-size: 22px;
+        color: $color-primary;
+        font-family: "Marko One", serif;
+        font-weight: 400;
+        line-height: 1.1;
+        text-transform: uppercase;
+        margin-right: auto;
+        margin-left: 11px;
+
+        @media (max-width: $bp-430) {
+            margin-left: 0;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+    }
+
+    .menu {
+        .menu-list {
+            display: flex;
+            margin-top: 88.62px;
+            gap: 0 43px;
+            font-size: 16px;
+            color: $color-bg-base;
+            margin-right: 255px;
+            margin-left: 159px;
+
+            @media (max-width: $bp-1235) {
+                margin-left: auto;
+                margin-right: 0;
+            }
+
+            @media (max-width: $bp-900) {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            @media (max-width: $bp-430) {
+                font-size: 12px;
+            }
+
+            .menu-link {
+                &:hover {
+                    color: $color-primary;
+                }
+
+                a {
+                    position: relative;
+                    text-decoration: none;
+                }
+
+                &.active a {
+                    color: $color-primary;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -6px;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background-color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-lang {
+        display: inline-block;
+        margin-top: 79px;
+        line-height: 1.9;
         font-size: 16px;
-        margin-right: 20px;
-    }
+        color: $color-text;
 
-    .menu-list {
-        font-size: 12px;
-    }
+        .lang-select {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
 
-    .header-inner {
-        justify-content: flex-start;
+            .flag-icon {
+                display: flex;
+                gap: 7px;
+            }
+
+            .arrow-icon {
+                margin-left: 5px;
+            }
+        }
+
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            margin-top: 5px;
+            background-color: $color-white;
+            box-shadow: 4px 4px 16px $color-shadow;
+            border-radius: $radius-base;
+            align-items: center;
+
+            button {
+                color: $color-secondary;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                line-height: 1.2;
+            }
+
+            .lang-option {
+                display: flex;
+                margin: 15px;
+                justify-content: space-between;
+                gap: 5px;
+            }
+        }
+
+        &:hover .lang-dropdown {
+            display: block;
+        }
+
+        @media (max-width: $bp-1235) {
+            margin-left: auto;
+        }
+
+        @media (max-width: $bp-430) {
+            margin-left: 15px;
+            font-size: 12px;
+
+            img {
+                width: 15px;
+            }
+
+            .arrow-icon {
+                width: 10px;
+            }
+        }
     }
 }
 </style>
