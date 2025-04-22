@@ -60,18 +60,7 @@
                 margin-left: 91px;
                 margin-right: 24.5px;
 
-                <<<<<<< HEAD .stat-item:not(:last-child)::after {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    right: -15px;
-                    transform: translateY(-50%);
-                    width: 2px;
-                    height: 160%;
-                    background-color: #EEEFF2;
-                }
-
-                =======&:not(:last-child)::after {
+                &:not(:last-child)::after {
                     content: "";
                     position: absolute;
                     top: 50%;
@@ -82,7 +71,7 @@
                     background-color: $color-bg-light;
                 }
 
-                >>>>>>>feature/scss p {
+                p {
                     color: $color-secondary;
                     font-size: 22px;
                     font-weight: 700;
@@ -115,130 +104,66 @@
         }
     }
 
-    <<<<<<< HEAD .stat-content::before {
-        left: 40px;
-    }
-}
+    @media (max-width: $bp-840) {
+        .stat-container {
+            margin-bottom: 95px;
 
-@media (max-width: 840px) {
-    .stat-item {
-        gap: 15px;
-        margin-right: 0;
-    }
+            .stat-content {
+                height: 130px;
 
-    .stat-item p {
-        font-size: 16px;
-    }
+                &::before {
+                    left: 20px;
+                }
 
-    .stat-item span {
-        font-size: 14px;
-    }
+                .stat-item {
+                    gap: 15px;
+                    margin-right: 0;
 
-    .stat-content {
-        height: 130px;
-    }
+                    &:not(:last-child)::after {
+                        height: 150%;
+                    }
 
-    .stat-content::before {
-        left: 20px;
-    }
+                    p {
+                        font-size: 16px;
+                    }
 
-    .stat-item:not(:last-child)::after {
-        height: 150%;
-    }
-
-    .stat-container {
-        margin-bottom: 95px;
-    }
-}
-
-@media (max-width: 630px) {
-
-
-    .stat-item img {
-        width: 35px;
-        height: 36px;
-    }
-
-    .stat-item {
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 470px) {
-    .stat-item {
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .stat-item:not(:last-child)::after {
-        height: 70%;
-        right: -20%;
-    }
-}
-
-=======@media (max-width: $bp-840) {
-    .stat-container {
-        margin-bottom: 95px;
-
-        .stat-content {
-            height: 130px;
-
-            &::before {
-                left: 20px;
+                    span {
+                        font-size: 14px;
+                    }
+                }
             }
+        }
+    }
 
-            .stat-item {
-                gap: 15px;
-                margin-right: 0;
+    @media (max-width: $bp-630) {
+        .stat-container {
+            .stat-content {
+                .stat-item {
+                    margin: 0 auto;
 
-                &:not(:last-child)::after {
-                    height: 150%;
+                    img {
+                        width: 35px;
+                        height: 36px;
+                    }
                 }
+            }
+        }
+    }
 
-                p {
-                    font-size: 16px;
-                }
+    @media (max-width: $bp-470) {
+        .stat-container {
+            .stat-content {
+                .stat-item {
+                    flex-direction: column;
+                    align-items: flex-start;
 
-                span {
-                    font-size: 14px;
+                    &:not(:last-child)::after {
+                        height: 70%;
+                        right: -20%;
+                    }
                 }
             }
         }
     }
 }
-
-@media (max-width: $bp-630) {
-    .stat-container {
-        .stat-content {
-            .stat-item {
-                margin: 0 auto;
-
-                img {
-                    width: 35px;
-                    height: 36px;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: $bp-470) {
-    .stat-container {
-        .stat-content {
-            .stat-item {
-                flex-direction: column;
-                align-items: flex-start;
-
-                &:not(:last-child)::after {
-                    height: 70%;
-                    right: -20%;
-                }
-            }
-        }
-    }
-}
-}
-
->>>>>>>feature/scss
 </style>
