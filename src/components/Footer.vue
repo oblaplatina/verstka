@@ -29,7 +29,7 @@
           <h3 class="footer-title">
             {{ column.title }}
             <span class="dropdown-icon" @click="toggleDropdown(index)" :class="{ open: isOpen[index] }">
-              <img :src="require('@/assets/images/lang-arrow.svg')" alt="Dropdown arrow" class="dropdown-arrow" />
+              <img :src="langArrow" alt="Dropdown arrow" class="dropdown-arrow" />
             </span>
           </h3>
           <ul class="footer-list" :class="{ 'is-hidden': isMobile && !isOpen[index] }">
@@ -49,28 +49,41 @@
 </template>
 
 <script setup>
-import { ref, onMounted, BeforeUnmount } from 'vue'
-import { defineProps } from 'vue'
+import { ref, onMounted, onBeforeUnmount, defineProps } from 'vue'
 import langArrow from '@/assets/images/lang-arrow.svg'
 import { ROUTES } from '@/router/routes'
 
-this.mediaQuery.addEventListener('change', this.handleMediaChange);
-beforeUnmount() {
-  if (this.mediaQuery) {
-    this.mediaQuery.removeEventListener('change', this.handleMediaChange);
+const props = defineProps({
+  links: {
+    type: Array,
+    default: () => []
   }
-},
-methods: {
-  handleMediaChange(e) {
-    this.isMobile = e.matches;
-    this.isOpen = Array(this.links.length).fill(!this.isMobile);
-  },
-  toggleDropdown(index) {
-    if (this.isMobile) {
-      this.isOpen[index] = !this.isOpen[index];
-    }
+})
+
+const isMobile = ref(false)
+const isOpen = ref([])
+let mediaQuery
+
+function handleMediaChange(e) {
+  isMobile.value = e.matches
+  isOpen.value = props.links.map(() => !e.matches)
+}
+
+function toggleDropdown(idx) {
+  if (isMobile.value) {
+    isOpen.value[idx] = !isOpen.value[idx]
   }
 }
+
+onMounted(() => {
+  mediaQuery = window.matchMedia('(max-width: 830px)')
+  handleMediaChange(mediaQuery)
+  mediaQuery.addEventListener('change', handleMediaChange)
+})
+
+onBeforeUnmount(() => {
+  mediaQuery?.removeEventListener('change', handleMediaChange)
+})
 </script>
 
 <style lang="scss" scoped>
