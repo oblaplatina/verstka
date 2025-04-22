@@ -2,7 +2,7 @@
     <div class="header">
         <div class="container">
             <div class="header-inner">
-                <router-link to="/" class="logo">
+                <router-link :to="ROUTES.HOME" class="logo">
                     <img src="@/assets/images/logo.svg" alt="Logo" />
                 </router-link>
                 <h3 class="brand-name">{{ $t('common.header.brandName') }}</h3>
@@ -10,7 +10,7 @@
                     <ul class="menu-list">
                         <li v-for="(item, index) in menuItems" :key="index" :class="{ active: isActive(item.path) }"
                             class="menu-link">
-                            <router-link :to="item.path">
+                            <router-link :to="ROUTES[item.path]">
                                 {{ $t(`common.header.menuItems.${item.label}`) }}
                             </router-link>
                         </li>
@@ -18,18 +18,18 @@
                 </nav>
                 <div class="menu-lang" @mouseenter="showDropdown" @mouseleave="hideDropdown">
                     <div class="lang-select">
-                        <a href="#" class="flag-icon">
+                        <button class="flag-icon">
                             {{ selectedLang.code }}
                             <img :src="selectedLang.flag" :alt="selectedLang.code" />
-                        </a>
+                        </button>
                         <img :src="langArrow" alt="" class="arrow-icon" />
                     </div>
                     <div class="lang-dropdown" v-if="isDropdownOpen">
-                        <a href="#" v-for="lang in otherLanguages" :key="lang.code" class="lang-option"
-                            @click.prevent="selectLanguage(lang)">
+                        <button v-for="lang in otherLanguages" :key="lang.code" class="lang-option"
+                            @click="selectLanguage(lang)">
                             {{ lang.code }}
                             <img :src="lang.flag" :alt="lang.code" />
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,7 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
+import { ROUTES } from '@/router/routes'
 import flagEn from '@/assets/images/flag-en.svg'
 import flagEs from '@/assets/images/flag-es.svg'
 import flagDe from '@/assets/images/flag-de.svg'
@@ -51,11 +52,11 @@ const route = useRoute()
 const router = useRouter()
 
 const menuItems = [
-    { label: 'about', path: '/about' },
-    { label: 'products', path: '/products' },
-    { label: 'work', path: '/work' },
-    { label: 'blog', path: '/blog' },
-    { label: 'contact', path: '/contact' }
+    { label: 'about', path: 'ABOUT' },
+    { label: 'products', path: 'HOME' },
+    { label: 'work', path: 'HOME' },
+    { label: 'blog', path: 'HOME' },
+    { label: 'contact', path: 'HOME' }
 ]
 
 const languages = [
@@ -65,7 +66,10 @@ const languages = [
 ]
 
 const findCurrentLang = (currentLangCode) => {
-    return languages.find(lang => lang.code.toLowerCase() === currentLangCode)
+    const storedLocale = localStorage.getItem('locale')
+    const langCode = storedLocale ? storedLocale : currentLangCode
+    const found = languages.find(lang => lang.code.toLowerCase() === langCode)
+    return found ? found : { code: 'En', flag: flagEn }
 }
 
 const selectedLang = ref(findCurrentLang(locale.value) || { code: 'En', flag: flagEn })
@@ -198,7 +202,7 @@ onMounted(() => {
     align-items: center;
 }
 
-.lang-dropdown a {
+.lang-dropdown button {
     color: #333;
     text-decoration: none;
     display: flex;

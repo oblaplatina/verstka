@@ -1,206 +1,202 @@
 {
-    "header": {
-        "brandName": "IHRE MARKE",
-        "menuItems": {
-            "about": "Über uns",
-            "products": "Produkte",
-            "work": "Wie wir arbeiten",
-            "blog": "Blog",
-            "contact": "Kontakt"
-        }
-    },
-    "footer": {
-        "brandName": "IHRE MARKE",
-        "description": "Körperliches als etwas, das schadet. Aber die Schmerzen bleiben.",
-        "socialLinks": [
-            "Facebook",
-            "Twitter",
-            "Instagram"
-        ],
-        "copyright": "©2020 Alle Rechte vorbehalten",
-        "homeFooter": {
-            "columns": [
-                {
-                    "title": "Produkt",
-                    "class": "footer-column-product",
-                    "links": [
-                        {
-                            "text": "Herunterladen",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Preise",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Standorte",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Server",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Länder",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Blog",
-                            "href": "#",
-                            "isRouter": true
-                        }
-                    ]
-                },
-                {
-                    "title": "Unternehmen",
-                    "class": "footer-column-company",
-                    "links": [
-                        {
-                            "text": "Marke",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "FAQ",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Tutorials",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Über uns",
-                            "href": "/about",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Wir stellen ein!",
-                            "href": "#",
-                            "isRouter": true
-                        }
-                    ]
-                },
-                {
-                    "title": "Datenschutz",
-                    "class": "footer-column-privacy",
-                    "links": [
-                        {
-                            "text": "Datenschutz",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Nutzungsbedingungen",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Seitenverzeichnis",
-                            "href": "#",
-                            "isRouter": true
-                        }
-                    ]
-                }
-            ]
-        },
-        "about": {
-            "columns": [
-                {
-                    "title": "Produkt",
-                    "class": "footer-column-product",
-                    "links": [
-                        {
-                            "text": "Herunterladen",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Preise",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Standorte",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Server",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Länder",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Blog",
-                            "href": "#",
-                            "isRouter": true
-                        }
-                    ]
-                },
-                {
-                    "title": "Engagieren",
-                    "class": "footer-column-company",
-                    "links": [
-                        {
-                            "text": "ECT",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "FAQ",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Tutorials",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Über uns",
-                            "href": "/about",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Wir stellen ein!",
-                            "href": "#",
-                            "isRouter": true
-                        }
-                    ]
-                },
-                {
-                    "title": "Datenschutz",
-                    "class": "footer-column-privacy",
-                    "links": [
-                        {
-                            "text": "Datenschutz",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Nutzungsbedingungen",
-                            "href": "#",
-                            "isRouter": true
-                        },
-                        {
-                            "text": "Seitenverzeichnis",
-                            "href": "#",
-                            "isRouter": true
-                        }
-                    ]
-                }
-            ]
-        }
+  "header": {
+    "brandName": "IHRE MARKE",
+    "menuItems": {
+      "about": "Über uns",
+      "products": "Produkte",
+      "work": "Wie wir arbeiten",
+      "blog": "Blog",
+      "contact": "Kontakt"
     }
+  },
+  "footer": {
+    "brandName": "IHRE MARKE",
+    "description": "Körperliches als etwas, das schadet. Aber die Schmerzen bleiben.",
+    "socialLinks": ["Facebook", "Twitter", "Instagram"],
+    "copyright": "©2020 Alle Rechte vorbehalten",
+    "homeFooter": {
+      "columns": [
+        {
+          "title": "Produkt",
+          "class": "footer-column-product",
+          "links": [
+            {
+              "text": "Herunterladen",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Preise",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Standorte",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Server",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Länder",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Blog",
+              "href": "#",
+              "isRouter": true
+            }
+          ]
+        },
+        {
+          "title": "Unternehmen",
+          "class": "footer-column-company",
+          "links": [
+            {
+              "text": "Marke",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "FAQ",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Tutorials",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Über uns",
+              "href": "ABOUT",
+              "isRouter": true
+            },
+            {
+              "text": "Wir stellen ein!",
+              "href": "#",
+              "isRouter": true
+            }
+          ]
+        },
+        {
+          "title": "Datenschutz",
+          "class": "footer-column-privacy",
+          "links": [
+            {
+              "text": "Datenschutz",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Nutzungsbedingungen",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Seitenverzeichnis",
+              "href": "#",
+              "isRouter": true
+            }
+          ]
+        }
+      ]
+    },
+    "about": {
+      "columns": [
+        {
+          "title": "Produkt",
+          "class": "footer-column-product",
+          "links": [
+            {
+              "text": "Herunterladen",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Preise",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Standorte",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Server",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Länder",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Blog",
+              "href": "#",
+              "isRouter": true
+            }
+          ]
+        },
+        {
+          "title": "Engagieren",
+          "class": "footer-column-company",
+          "links": [
+            {
+              "text": "ECT",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "FAQ",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Tutorials",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Über uns",
+              "href": "ABOUT",
+              "isRouter": true
+            },
+            {
+              "text": "Wir stellen ein!",
+              "href": "#",
+              "isRouter": true
+            }
+          ]
+        },
+        {
+          "title": "Datenschutz",
+          "class": "footer-column-privacy",
+          "links": [
+            {
+              "text": "Datenschutz",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Nutzungsbedingungen",
+              "href": "#",
+              "isRouter": true
+            },
+            {
+              "text": "Seitenverzeichnis",
+              "href": "#",
+              "isRouter": true
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

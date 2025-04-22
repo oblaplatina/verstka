@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="footer-brand-logo">
-          <router-link to="/" class="footer-logo">
+          <router-link :to="ROUTES.HOME" class="footer-logo">
             <img src="@/assets/images/logo.svg" alt="footer logo" />
           </router-link>
           <h3 class="footer-brand-name">{{ $t('common.footer.brandName') }}</h3>
@@ -29,12 +29,12 @@
           <h3 class="footer-title">
             {{ column.title }}
             <span class="dropdown-icon" @click="toggleDropdown(index)" :class="{ open: isOpen[index] }">
-              <img :src="langArrow" alt="Dropdown arrow" class="dropdown-arrow" />
+              <img :src="require('@/assets/images/lang-arrow.svg')" alt="Dropdown arrow" class="dropdown-arrow" />
             </span>
           </h3>
           <ul class="footer-list" :class="{ 'is-hidden': isMobile && !isOpen[index] }">
             <li v-for="(link, linkIndex) in column.links" :key="linkIndex">
-              <router-link v-if="link.isRouter" :to="link.href" class="footer-link">
+              <router-link v-if="link.isRouter" :to="ROUTES[link.href]" class="footer-link">
                 {{ link.text }}
               </router-link>
               <a v-else :href="link.href" class="footer-link" target="_blank">
@@ -49,44 +49,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, BeforeUnmount } from 'vue'
 import { defineProps } from 'vue'
 import langArrow from '@/assets/images/lang-arrow.svg'
+import { ROUTES } from '@/router/routes'
 
-const props = defineProps({
-  links: {
-    type: Array,
-    default: () => []
+this.mediaQuery.addEventListener('change', this.handleMediaChange);
+beforeUnmount() {
+  if (this.mediaQuery) {
+    this.mediaQuery.removeEventListener('change', this.handleMediaChange);
   }
-})
-
-const isMobile = ref(false)
-const isOpen = ref([])
-let mediaQuery = null
-
-const handleMediaChange = (e) => {
-  isMobile.value = e.matches
-  isOpen.value = Array(props.links.length).fill(!isMobile.value)
-}
-
-const toggleDropdown = (index) => {
-  if (isMobile.value) {
-    isOpen.value[index] = !isOpen.value[index]
+},
+methods: {
+  handleMediaChange(e) {
+    this.isMobile = e.matches;
+    this.isOpen = Array(this.links.length).fill(!this.isMobile);
+  },
+  toggleDropdown(index) {
+    if (this.isMobile) {
+      this.isOpen[index] = !this.isOpen[index];
+    }
   }
 }
-
-onMounted(() => {
-  mediaQuery = window.matchMedia('(max-width: 830px)')
-  isMobile.value = mediaQuery.matches
-  isOpen.value = Array(props.links.length).fill(!isMobile.value)
-  mediaQuery.addEventListener('change', handleMediaChange)
-})
-
-onBeforeUnmount(() => {
-  if (mediaQuery) {
-    mediaQuery.removeEventListener('change', handleMediaChange)
-  }
-})
 </script>
 <style>
 .footer {
