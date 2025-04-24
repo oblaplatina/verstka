@@ -45,6 +45,7 @@ function handleClick(event) {
     padding: 17px 80px;
     border-radius: $radius-base;
     transition: background-color 0.3s;
+    margin-right: 70px;
 
     @media (max-width: $bp-900) {
         font-size: 14px;
@@ -66,7 +67,7 @@ function handleClick(event) {
         left: 19.09px;
         right: 19.09px;
         bottom: -25.3px;
-        background-color: $color-primary;
+        background-color: $color-btn-shadow;
         opacity: 0.22;
         border-radius: $radius-base;
         filter: blur(22px);

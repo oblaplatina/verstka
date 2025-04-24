@@ -223,6 +223,8 @@ onMounted(() => {
             .flag-icon {
                 display: flex;
                 gap: 7px;
+                border: none;
+                background: none;
             }
 
             .arrow-icon {
@@ -245,6 +247,8 @@ onMounted(() => {
                 display: flex;
                 align-items: center;
                 line-height: 1.2;
+                border: none;
+                background: none;
             }
 
             .lang-option {
